@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		71ED293D1FE1465500E1F2DD /* AnimatedBody.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ED293C1FE1465500E1F2DD /* AnimatedBody.storyboard */; };
+		ADA19DFC1FE147170042D088 /* Base.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADA19DFB1FE147170042D088 /* Base.storyboard */; };
 		ADB3AE411FDEAE7200E283A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */; };
 		ADB3AE431FDEAE7200E283A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB3AE421FDEAE7200E283A0 /* ViewController.swift */; };
 		ADB3AE461FDEAE7200E283A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB3AE441FDEAE7200E283A0 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		71ED293C1FE1465500E1F2DD /* AnimatedBody.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimatedBody.storyboard; sourceTree = "<group>"; };
+		ADA19DFB1FE147170042D088 /* Base.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Base.storyboard; sourceTree = "<group>"; };
 		ADB3AE3D1FDEAE7200E283A0 /* KamasUltra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KamasUltra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADB3AE421FDEAE7200E283A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +47,15 @@
 			path = AnimatedBody;
 			sourceTree = "<group>";
 		};
+		ADA19DFA1FE146DD0042D088 /* P2P */ = {
+			isa = PBXGroup;
+			children = (
+				ADA19DFB1FE147170042D088 /* Base.storyboard */,
+			);
+			name = P2P;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		ADB3AE341FDEAE7200E283A0 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +75,7 @@
 		ADB3AE3F1FDEAE7200E283A0 /* KamasUltra */ = {
 			isa = PBXGroup;
 			children = (
+				ADA19DFA1FE146DD0042D088 /* P2P */,
 				71ED293B1FE1461F00E1F2DD /* AnimatedBody */,
 				ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */,
 				ADB3AE421FDEAE7200E283A0 /* ViewController.swift */,
@@ -135,8 +147,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADB3AE4B1FDEAE7200E283A0 /* LaunchScreen.storyboard in Resources */,
-				ADA19DF91FE1461C0042D088 /* Base.storyboard in Resources */,
 				ADB3AE481FDEAE7200E283A0 /* Assets.xcassets in Resources */,
+				ADA19DFC1FE147170042D088 /* Base.storyboard in Resources */,
 				ADB3AE461FDEAE7200E283A0 /* Main.storyboard in Resources */,
 				71ED293D1FE1465500E1F2DD /* AnimatedBody.storyboard in Resources */,
 			);
