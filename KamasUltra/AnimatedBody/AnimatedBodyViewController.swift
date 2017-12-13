@@ -28,6 +28,7 @@ class AnimatedBodyViewController: UIViewController {
                 self.confirmOutlet.alpha = 1.0
             })
             enableSwipe = 1
+            enableTouch = 0
         }
         
     }
