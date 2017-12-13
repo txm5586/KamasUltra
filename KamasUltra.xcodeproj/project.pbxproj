@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71ED293D1FE1465500E1F2DD /* AnimatedBody.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ED293C1FE1465500E1F2DD /* AnimatedBody.storyboard */; };
 		ADB3AE411FDEAE7200E283A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */; };
 		ADB3AE431FDEAE7200E283A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB3AE421FDEAE7200E283A0 /* ViewController.swift */; };
 		ADB3AE461FDEAE7200E283A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB3AE441FDEAE7200E283A0 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71ED293C1FE1465500E1F2DD /* AnimatedBody.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimatedBody.storyboard; sourceTree = "<group>"; };
 		ADB3AE3D1FDEAE7200E283A0 /* KamasUltra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KamasUltra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADB3AE421FDEAE7200E283A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71ED293B1FE1461F00E1F2DD /* AnimatedBody */ = {
+			isa = PBXGroup;
+			children = (
+				71ED293C1FE1465500E1F2DD /* AnimatedBody.storyboard */,
+			);
+			path = AnimatedBody;
+			sourceTree = "<group>";
+		};
 		ADB3AE341FDEAE7200E283A0 = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +64,7 @@
 		ADB3AE3F1FDEAE7200E283A0 /* KamasUltra */ = {
 			isa = PBXGroup;
 			children = (
+				71ED293B1FE1461F00E1F2DD /* AnimatedBody */,
 				ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */,
 				ADB3AE421FDEAE7200E283A0 /* ViewController.swift */,
 				ADB3AE441FDEAE7200E283A0 /* Main.storyboard */,
@@ -126,6 +137,7 @@
 				ADB3AE4B1FDEAE7200E283A0 /* LaunchScreen.storyboard in Resources */,
 				ADB3AE481FDEAE7200E283A0 /* Assets.xcassets in Resources */,
 				ADB3AE461FDEAE7200E283A0 /* Main.storyboard in Resources */,
+				71ED293D1FE1465500E1F2DD /* AnimatedBody.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
