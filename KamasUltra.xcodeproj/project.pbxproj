@@ -135,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADB3AE4B1FDEAE7200E283A0 /* LaunchScreen.storyboard in Resources */,
+				ADA19DF91FE1461C0042D088 /* Base.storyboard in Resources */,
 				ADB3AE481FDEAE7200E283A0 /* Assets.xcassets in Resources */,
 				ADB3AE461FDEAE7200E283A0 /* Main.storyboard in Resources */,
 				71ED293D1FE1465500E1F2DD /* AnimatedBody.storyboard in Resources */,
