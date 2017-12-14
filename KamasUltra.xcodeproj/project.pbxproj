@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		71ED293D1FE1465500E1F2DD /* AnimatedBody.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ED293C1FE1465500E1F2DD /* AnimatedBody.storyboard */; };
 		71ED293F1FE148C800E1F2DD /* AnimatedBodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ED293E1FE148C800E1F2DD /* AnimatedBodyViewController.swift */; };
+		AD67CA421FE2FD2400838902 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CA411FE2FD2400838902 /* PlayViewController.swift */; };
+		AD67CA461FE3033400838902 /* NearbyPeersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CA451FE3033400838902 /* NearbyPeersTableViewController.swift */; };
+		AD67CA481FE3049100838902 /* MPCHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CA471FE3049100838902 /* MPCHandler.swift */; };
+		AD6D20D11FE31D1700010790 /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D20D01FE31D1700010790 /* Peer.swift */; };
+		AD6D20D31FE322A200010790 /* NearbyPeersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D20D21FE322A200010790 /* NearbyPeersTableViewCell.swift */; };
+		AD6D20D61FE32A6A00010790 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D20D51FE32A6A00010790 /* Notifications.swift */; };
 		ADA19DFC1FE147170042D088 /* Base.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADA19DFB1FE147170042D088 /* Base.storyboard */; };
 		ADB3AE411FDEAE7200E283A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */; };
 		ADB3AE431FDEAE7200E283A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB3AE421FDEAE7200E283A0 /* ViewController.swift */; };
@@ -21,6 +27,12 @@
 /* Begin PBXFileReference section */
 		71ED293C1FE1465500E1F2DD /* AnimatedBody.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimatedBody.storyboard; sourceTree = "<group>"; };
 		71ED293E1FE148C800E1F2DD /* AnimatedBodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedBodyViewController.swift; sourceTree = "<group>"; };
+		AD67CA411FE2FD2400838902 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
+		AD67CA451FE3033400838902 /* NearbyPeersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyPeersTableViewController.swift; sourceTree = "<group>"; };
+		AD67CA471FE3049100838902 /* MPCHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPCHandler.swift; sourceTree = "<group>"; };
+		AD6D20D01FE31D1700010790 /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
+		AD6D20D21FE322A200010790 /* NearbyPeersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyPeersTableViewCell.swift; sourceTree = "<group>"; };
+		AD6D20D51FE32A6A00010790 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		ADA19DFB1FE147170042D088 /* Base.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Base.storyboard; sourceTree = "<group>"; };
 		ADB3AE3D1FDEAE7200E283A0 /* KamasUltra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KamasUltra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,9 +65,46 @@
 			path = AnimatedBody;
 			sourceTree = "<group>";
 		};
+		AD67CA3F1FE2FCE300838902 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AD67CA411FE2FD2400838902 /* PlayViewController.swift */,
+				AD67CA451FE3033400838902 /* NearbyPeersTableViewController.swift */,
+				AD6D20D21FE322A200010790 /* NearbyPeersTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		AD67CA401FE2FCEF00838902 /* MPC */ = {
+			isa = PBXGroup;
+			children = (
+				AD67CA471FE3049100838902 /* MPCHandler.swift */,
+			);
+			path = MPC;
+			sourceTree = "<group>";
+		};
+		AD6D20CF1FE31CFE00010790 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD6D20D01FE31D1700010790 /* Peer.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AD6D20D41FE32A5200010790 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AD6D20D51FE32A6A00010790 /* Notifications.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		ADA19DFA1FE146DD0042D088 /* P2P */ = {
 			isa = PBXGroup;
 			children = (
+				AD6D20CF1FE31CFE00010790 /* Models */,
+				AD67CA401FE2FCEF00838902 /* MPC */,
+				AD67CA3F1FE2FCE300838902 /* ViewControllers */,
 				ADA19DFB1FE147170042D088 /* Base.storyboard */,
 			);
 			name = P2P;
@@ -81,6 +130,7 @@
 		ADB3AE3F1FDEAE7200E283A0 /* KamasUltra */ = {
 			isa = PBXGroup;
 			children = (
+				AD6D20D41FE32A5200010790 /* Constants */,
 				ADA19DFA1FE146DD0042D088 /* P2P */,
 				71ED293B1FE1461F00E1F2DD /* AnimatedBody */,
 				ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */,
@@ -167,10 +217,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD6D20D61FE32A6A00010790 /* Notifications.swift in Sources */,
 				71ED293F1FE148C800E1F2DD /* AnimatedBodyViewController.swift in Sources */,
+				AD6D20D11FE31D1700010790 /* Peer.swift in Sources */,
+				AD67CA421FE2FD2400838902 /* PlayViewController.swift in Sources */,
+				AD67CA461FE3033400838902 /* NearbyPeersTableViewController.swift in Sources */,
 				ADB3AE431FDEAE7200E283A0 /* ViewController.swift in Sources */,
 				BA1D29EF1FE2B8140016BF19 /* GifWaveAnimation.swift in Sources */,
+				AD67CA481FE3049100838902 /* MPCHandler.swift in Sources */,
 				ADB3AE411FDEAE7200E283A0 /* AppDelegate.swift in Sources */,
+				AD6D20D31FE322A200010790 /* NearbyPeersTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +364,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4MU46TKQ35;
+				DEVELOPMENT_TEAM = JWYZUH34NP;
 				INFOPLIST_FILE = KamasUltra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DrunGeek.KamasUltra;
@@ -323,7 +379,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4MU46TKQ35;
+				DEVELOPMENT_TEAM = JWYZUH34NP;
 				INFOPLIST_FILE = KamasUltra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = DrunGeek.KamasUltra;
