@@ -101,6 +101,7 @@ class AnimatedBodyViewController: UIViewController {
                         bodyPartLabel.frame.origin.y = CGFloat(Double(truncating: c) * 625 + 10)
                     }
                 }
+                
                 if Double(truncating: c) < 0.55 && Double(truncating: c) > 0.45 {
                     bodyPartLabel.text = "dick"
                     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
