@@ -31,6 +31,13 @@ class AnimatedBodyViewController: UIViewController {
                 self.confirmOutlet.alpha = 1.0 //The confirm button appears
                 
                 self.waveGif.frame.origin.y = CGFloat(667) //Wave goes down
+                
+                //Buttons disappear below
+                self.kiss.frame.origin.y = CGFloat(755)
+                self.lick.frame.origin.y = CGFloat(755)
+                self.suck.frame.origin.y = CGFloat(755)
+                self.touch.frame.origin.y = CGFloat(755)
+                self.random.frame.origin.y = CGFloat(755)
             })
             enableSwipe = 1 //Enable the swipe of the red line
             enableTouch = 0 //Disable the touch to make the body bigger again
@@ -48,6 +55,12 @@ class AnimatedBodyViewController: UIViewController {
     @IBOutlet weak var confirmOutlet: UIButton!
     
     @IBOutlet weak var waveGif: UIImageView!
+    
+    @IBOutlet weak var kiss: UIButton!
+    @IBOutlet weak var lick: UIButton!
+    @IBOutlet weak var suck: UIButton!
+    @IBOutlet weak var touch: UIButton!
+    @IBOutlet weak var random: UIButton!
     
     //Parameters to give a location to the gradient and move it on the body
     var a: NSNumber = 0.00
@@ -177,6 +190,13 @@ class AnimatedBodyViewController: UIViewController {
             self.confirmOutlet.alpha = 0.0 //The button disappears
             
             self.waveGif.frame.origin.y = CGFloat(467) //Wave appears from below
+            
+            //Buttons appear from below
+            self.kiss.frame.origin.y = CGFloat(558)
+            self.lick.frame.origin.y = CGFloat(558)
+            self.suck.frame.origin.y = CGFloat(555)
+            self.touch.frame.origin.y = CGFloat(555)
+            self.random.frame.origin.y = CGFloat(555)
         })
         
         enableSwipe = 0 //Disable the swipe of the red line

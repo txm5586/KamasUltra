@@ -46,6 +46,31 @@
                                 <rect key="frame" x="0.0" y="667" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fKT-1Q-GlD">
+                                <rect key="frame" x="16" y="755" width="40" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="kiss"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Uq-rc-7CP">
+                                <rect key="frame" x="93" y="755" width="40" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="lick"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5B-eH-ruv">
+                                <rect key="frame" x="165" y="755" width="44" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="suck"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30X-UV-inz">
+                                <rect key="frame" x="319" y="755" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="random"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQg-vc-LRj">
+                                <rect key="frame" x="242" y="755" width="49" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="touch"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="B2u-mQ-weY"/>
@@ -55,6 +80,11 @@
                         <outlet property="bodyPartLabel" destination="ALg-OO-BSe" id="kAx-J4-cJM"/>
                         <outlet property="bodyVIew" destination="9sf-rO-GfL" id="Cks-wU-AxW"/>
                         <outlet property="confirmOutlet" destination="33g-D4-AP5" id="DfX-eB-8Vx"/>
+                        <outlet property="kiss" destination="fKT-1Q-GlD" id="8Jn-yg-KZ1"/>
+                        <outlet property="lick" destination="4Uq-rc-7CP" id="IZ4-lO-ynn"/>
+                        <outlet property="random" destination="30X-UV-inz" id="AjV-Gn-LHF"/>
+                        <outlet property="suck" destination="l5B-eH-ruv" id="4es-n0-5xt"/>
+                        <outlet property="touch" destination="OQg-vc-LRj" id="agt-fS-BIf"/>
                         <outlet property="transparentBodyOutlet" destination="7pg-8X-RFY" id="YPQ-0o-kov"/>
                         <outlet property="waveGif" destination="KYk-6A-xts" id="KAT-HX-vML"/>
                     </connections>
@@ -67,5 +97,10 @@
     <resources>
         <image name="TransparentBody" width="265" height="944"/>
         <image name="check-mark" width="32" height="32"/>
+        <image name="kiss" width="40" height="25"/>
+        <image name="lick" width="40" height="33"/>
+        <image name="random" width="40" height="40"/>
+        <image name="suck" width="44" height="44"/>
+        <image name="touch" width="49" height="39"/>
     </resources>
 </document>
