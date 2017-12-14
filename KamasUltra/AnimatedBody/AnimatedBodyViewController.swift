@@ -103,13 +103,37 @@ class AnimatedBodyViewController: UIViewController {
                     }
                 }
                 
-                if Double(truncating: c) < 0.55 && Double(truncating: c) > 0.45 {
-                    bodyPartLabel.text = "dick"
-                    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-                    
-                } else {
-                    bodyPartLabel.text = "not dick"
-                    
+                switch Double(truncating: c) {
+                case 0..<0.07 :
+                    bodyPartLabel.text = "Head"
+                case 0.07..<0.095 :
+                    bodyPartLabel.text = "Ears"
+                case 0.095..<0.12 :
+                    bodyPartLabel.text = "Mouth"
+                case 0.12..<0.16 :
+                    bodyPartLabel.text = "Neck"
+                case 0.16..<0.22 :
+                    bodyPartLabel.text = "Shoulders"
+                case 0.22..<0.31 :
+                    bodyPartLabel.text = "Chest"
+                case 0.31..<0.36 :
+                    bodyPartLabel.text = "Arms"
+                case 0.36..<0.42 :
+                    bodyPartLabel.text = "Abdominal"
+                case 0.42..<0.52 :
+                    bodyPartLabel.text = "Waist"
+                case 0.52..<0.59 :
+                    bodyPartLabel.text = "Hands"
+                case 0.59..<0.71 :
+                    bodyPartLabel.text = "Legs"
+                case 0.71..<0.75 :
+                    bodyPartLabel.text = "Knees"
+                case 0.75..<0.95 :
+                    bodyPartLabel.text = "Legs"
+                case 0.95...1 :
+                    bodyPartLabel.text = "Feet"
+                default:
+                    break
                 }
             }
         }
