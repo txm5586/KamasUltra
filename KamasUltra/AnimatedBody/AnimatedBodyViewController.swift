@@ -134,6 +134,7 @@ class AnimatedBodyViewController: UIViewController {
                     bodyPartLabel.text = "Abdominal"
                 case 0.42..<0.52 :
                     bodyPartLabel.text = "Waist"
+                    AudioServicesPlayAlertSound(kSystemSoundID_Vibrate) //Vibration
                 case 0.52..<0.59 :
                     bodyPartLabel.text = "Hands"
                 case 0.59..<0.71 :
