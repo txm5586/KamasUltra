@@ -29,6 +29,8 @@ class AnimatedBodyViewController: UIViewController {
                 self.bodyPartLabel.frame.origin.y = CGFloat(Double(truncating: self.c) * 625 + 10)
                 
                 self.confirmOutlet.alpha = 1.0 //The confirm button appears
+                
+                self.waveGif.frame.origin.y = CGFloat(667) //Wave goes down
             })
             enableSwipe = 1 //Enable the swipe of the red line
             enableTouch = 0 //Disable the touch to make the body bigger again
@@ -44,6 +46,8 @@ class AnimatedBodyViewController: UIViewController {
     @IBOutlet weak var bodyVIew: UIView!
     
     @IBOutlet weak var confirmOutlet: UIButton!
+    
+    @IBOutlet weak var waveGif: UIImageView!
     
     //Parameters to give a location to the gradient and move it on the body
     var a: NSNumber = 0.00
@@ -68,6 +72,9 @@ class AnimatedBodyViewController: UIViewController {
         //Crate the tap gesture
         let tap = UITapGestureRecognizer(target: self, action: #selector(funcTap))
         self.bodyVIew.addGestureRecognizer(tap) //Add the tap gesture recognizerer to the body
+        
+        //Assing wave gif
+        waveGif.loadGif(name: "gifName")
     }
     
     //Hide the status bar
@@ -168,6 +175,8 @@ class AnimatedBodyViewController: UIViewController {
             self.bodyPartLabel.frame.origin.y = CGFloat(Double(truncating: self.c) * 425 + 10)
             
             self.confirmOutlet.alpha = 0.0 //The button disappears
+            
+            self.waveGif.frame.origin.y = CGFloat(467) //Wave appears from below
         })
         
         enableSwipe = 0 //Disable the swipe of the red line

@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="UwN-ug-fzu" customClass="AnimatedBodyViewController" customModule="KamasUltra" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="waq-OK-TMw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="867"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9sf-rO-GfL">
@@ -24,7 +24,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="TransparentBody" translatesAutoresizingMaskIntoConstraints="NO" id="7pg-8X-RFY">
-                                <rect key="frame" x="93" y="20" width="189" height="627"/>
+                                <rect key="frame" x="93" y="120" width="189" height="627"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Waist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ALg-OO-BSe">
@@ -42,15 +42,21 @@
                                     <action selector="confirmButton:" destination="UwN-ug-fzu" eventType="touchUpInside" id="mtQ-A2-Nha"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYk-6A-xts">
+                                <rect key="frame" x="0.0" y="667" width="375" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="B2u-mQ-weY"/>
                     </view>
+                    <size key="freeformSize" width="375" height="867"/>
                     <connections>
                         <outlet property="bodyPartLabel" destination="ALg-OO-BSe" id="kAx-J4-cJM"/>
                         <outlet property="bodyVIew" destination="9sf-rO-GfL" id="Cks-wU-AxW"/>
                         <outlet property="confirmOutlet" destination="33g-D4-AP5" id="DfX-eB-8Vx"/>
                         <outlet property="transparentBodyOutlet" destination="7pg-8X-RFY" id="YPQ-0o-kov"/>
+                        <outlet property="waveGif" destination="KYk-6A-xts" id="KAT-HX-vML"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bOm-Qu-cfe" userLabel="First Responder" sceneMemberID="firstResponder"/>
