@@ -71,6 +71,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="touch"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select the action" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fa-HT-elF">
+                                <rect key="frame" x="123" y="826" width="129" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="B2u-mQ-weY"/>
@@ -83,6 +90,7 @@
                         <outlet property="kiss" destination="fKT-1Q-GlD" id="8Jn-yg-KZ1"/>
                         <outlet property="lick" destination="4Uq-rc-7CP" id="IZ4-lO-ynn"/>
                         <outlet property="random" destination="30X-UV-inz" id="AjV-Gn-LHF"/>
+                        <outlet property="selectActionLabel" destination="9fa-HT-elF" id="MRC-EK-mHh"/>
                         <outlet property="suck" destination="l5B-eH-ruv" id="4es-n0-5xt"/>
                         <outlet property="touch" destination="OQg-vc-LRj" id="agt-fS-BIf"/>
                         <outlet property="transparentBodyOutlet" destination="7pg-8X-RFY" id="YPQ-0o-kov"/>

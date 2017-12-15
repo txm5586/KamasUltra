@@ -11,6 +11,7 @@ import AudioToolbox
 
 class AnimatedBodyViewController: UIViewController {
     
+    @IBOutlet weak var selectActionLabel: UILabel!
     var enableSwipe = 1 //if 1 enable the swipe to move the gradient and select the body part
     var enableTouch = 0 //if 1 enable the tap on the body when it's small to return fullscreen
     
@@ -189,6 +190,7 @@ class AnimatedBodyViewController: UIViewController {
             
             self.confirmOutlet.alpha = 0.0 //The button disappears
             
+            self.selectActionLabel.frame.origin.y = CGFloat(620) //"Select the action" label appears from below
             self.waveGif.frame.origin.y = CGFloat(467) //Wave appears from below
             
             //Buttons appear from below
