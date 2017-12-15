@@ -13,6 +13,14 @@ class Globals {
     // These are the properties you can store in your singleton
     var peers = [Peer]()
     
+    enum state : String {
+        case connected = "Connected"
+        case connecting = "Connecting"
+        case declined = "Declined"
+    }
+    
+    // Related to P2P Connection Handler
+    var mpchandler: MPCHandler = MPCHandler()
     
     // Here is how you would get to it without there being a global collision of variables.
     // , or in other words, it is a globally accessable parameter that is specific to the
@@ -24,3 +32,4 @@ class Globals {
         return Static.instance
     }
 }
+

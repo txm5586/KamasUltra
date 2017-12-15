@@ -10,23 +10,25 @@ import UIKit
 import MultipeerConnectivity
 
 class NearbyPeersTableViewController: UITableViewController {
-    private var appDelegate: AppDelegate!
+    @IBOutlet weak var cancelButtonItem: UIBarButtonItem!
+    @IBOutlet weak var doneButtomItem: UIBarButtonItem!
+    
+    var connecting : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         NotificationCenter.default.addObserver(self, selector: #selector(NearbyPeersTableViewController.foundPeer(notification:)),
                                                name:Notifications.MPCFoundPeer, object: nil);
         
+        //self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
         self.tableView.reloadData()
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.doneButtomItem.isEnabled = false
+    }
+    
+    @IBAction func cancelTapped(_ sender: Any) {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,26 +62,54 @@ class NearbyPeersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return Globals.shared.peers.count
+        return Globals.shared.peers.count + 1
     }
     
-    
-
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "NearbyPeersTableViewCell"
+        if indexPath.row == 0 {
+            let cellIdentifier = "SearchingTableViewCell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+            return cell
+        }
         
+        // Cell for earch peer
+        let cellIdentifier = "NearbyPeersTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? NearbyPeersTableViewCell  else {
             fatalError("The dequeued cell is not an instance of NearbyPeersTableViewCell.")
         }
         
         // Configure the cell...
-        let peer = Globals.shared.peers[indexPath.row]
+        let peer = Globals.shared.peers[indexPath.row - 1]
         
+        cell.peerID = peer.peerID
         cell.peerNameLabel.text = peer.peerID.displayName
-        cell.stateLabel.text = "Connected"
-
+        cell.stateLabel.text = ""
+        
+        print("Assigned to cell: \(indexPath.row)")
+        print("\t \(cell.peerID.displayName)")
+        
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if connecting {
+            return
+        }
+        
+        tableView.reloadData()
+        
+        if indexPath.row > 0 {
+            guard let cell = tableView.cellForRow(at: indexPath) as? NearbyPeersTableViewCell
+                else { fatalError("The dequeued cell is not an instance of NearbyPeersTableViewCell.") }
+            cell.stateLabel.text = Globals.state.connecting.rawValue
+            
+            if let peer = cell.peerID {
+                Globals.shared.mpchandler.invitePeer(peerID: peer)
+            } else {
+                
+            }
+            
+        }
     }
 
     /*

@@ -16,6 +16,7 @@
 		AD6D20D31FE322A200010790 /* NearbyPeersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D20D21FE322A200010790 /* NearbyPeersTableViewCell.swift */; };
 		AD6D20D61FE32A6A00010790 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D20D51FE32A6A00010790 /* Notifications.swift */; };
 		AD71957C1FE33E7E00F65030 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD71957B1FE33E7E00F65030 /* GlobalVariables.swift */; };
+		AD7195811FE40C3000F65030 /* SearchingIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7195801FE40C3000F65030 /* SearchingIndicatorTableViewCell.swift */; };
 		ADA19DFC1FE147170042D088 /* Base.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADA19DFB1FE147170042D088 /* Base.storyboard */; };
 		ADB3AE411FDEAE7200E283A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */; };
 		ADB3AE431FDEAE7200E283A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB3AE421FDEAE7200E283A0 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		AD6D20D21FE322A200010790 /* NearbyPeersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyPeersTableViewCell.swift; sourceTree = "<group>"; };
 		AD6D20D51FE32A6A00010790 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		AD71957B1FE33E7E00F65030 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		AD7195801FE40C3000F65030 /* SearchingIndicatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingIndicatorTableViewCell.swift; sourceTree = "<group>"; };
 		ADA19DFB1FE147170042D088 /* Base.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Base.storyboard; sourceTree = "<group>"; };
 		ADB3AE3D1FDEAE7200E283A0 /* KamasUltra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KamasUltra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				AD67CA411FE2FD2400838902 /* PlayViewController.swift */,
 				AD67CA451FE3033400838902 /* NearbyPeersTableViewController.swift */,
 				AD6D20D21FE322A200010790 /* NearbyPeersTableViewCell.swift */,
+				AD7195801FE40C3000F65030 /* SearchingIndicatorTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7195811FE40C3000F65030 /* SearchingIndicatorTableViewCell.swift in Sources */,
 				AD6D20D61FE32A6A00010790 /* Notifications.swift in Sources */,
 				71ED293F1FE148C800E1F2DD /* AnimatedBodyViewController.swift in Sources */,
 				AD6D20D11FE31D1700010790 /* Peer.swift in Sources */,
@@ -371,7 +375,7 @@
 				DEVELOPMENT_TEAM = JWYZUH34NP;
 				INFOPLIST_FILE = KamasUltra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DrunGeek.KamasUltra;
+				PRODUCT_BUNDLE_IDENTIFIER = DrunGeek.KamasUltra1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -386,7 +390,7 @@
 				DEVELOPMENT_TEAM = JWYZUH34NP;
 				INFOPLIST_FILE = KamasUltra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DrunGeek.KamasUltra;
+				PRODUCT_BUNDLE_IDENTIFIER = DrunGeek.KamasUltra1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
