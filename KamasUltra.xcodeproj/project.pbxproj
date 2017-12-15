@@ -15,6 +15,7 @@
 		AD6D20D11FE31D1700010790 /* Peer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D20D01FE31D1700010790 /* Peer.swift */; };
 		AD6D20D31FE322A200010790 /* NearbyPeersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D20D21FE322A200010790 /* NearbyPeersTableViewCell.swift */; };
 		AD6D20D61FE32A6A00010790 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D20D51FE32A6A00010790 /* Notifications.swift */; };
+		AD71957C1FE33E7E00F65030 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD71957B1FE33E7E00F65030 /* GlobalVariables.swift */; };
 		ADA19DFC1FE147170042D088 /* Base.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADA19DFB1FE147170042D088 /* Base.storyboard */; };
 		ADB3AE411FDEAE7200E283A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */; };
 		ADB3AE431FDEAE7200E283A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB3AE421FDEAE7200E283A0 /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 		AD6D20D01FE31D1700010790 /* Peer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Peer.swift; sourceTree = "<group>"; };
 		AD6D20D21FE322A200010790 /* NearbyPeersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyPeersTableViewCell.swift; sourceTree = "<group>"; };
 		AD6D20D51FE32A6A00010790 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		AD71957B1FE33E7E00F65030 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		ADA19DFB1FE147170042D088 /* Base.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Base.storyboard; sourceTree = "<group>"; };
 		ADB3AE3D1FDEAE7200E283A0 /* KamasUltra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KamasUltra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,12 +93,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		AD6D20D41FE32A5200010790 /* Constants */ = {
+		AD6D20D41FE32A5200010790 /* Global */ = {
 			isa = PBXGroup;
 			children = (
 				AD6D20D51FE32A6A00010790 /* Notifications.swift */,
+				AD71957B1FE33E7E00F65030 /* GlobalVariables.swift */,
 			);
-			path = Constants;
+			path = Global;
 			sourceTree = "<group>";
 		};
 		ADA19DFA1FE146DD0042D088 /* P2P */ = {
@@ -130,7 +133,7 @@
 		ADB3AE3F1FDEAE7200E283A0 /* KamasUltra */ = {
 			isa = PBXGroup;
 			children = (
-				AD6D20D41FE32A5200010790 /* Constants */,
+				AD6D20D41FE32A5200010790 /* Global */,
 				ADA19DFA1FE146DD0042D088 /* P2P */,
 				71ED293B1FE1461F00E1F2DD /* AnimatedBody */,
 				ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */,
@@ -223,6 +226,7 @@
 				AD67CA421FE2FD2400838902 /* PlayViewController.swift in Sources */,
 				AD67CA461FE3033400838902 /* NearbyPeersTableViewController.swift in Sources */,
 				ADB3AE431FDEAE7200E283A0 /* ViewController.swift in Sources */,
+				AD71957C1FE33E7E00F65030 /* GlobalVariables.swift in Sources */,
 				BA1D29EF1FE2B8140016BF19 /* GifWaveAnimation.swift in Sources */,
 				AD67CA481FE3049100838902 /* MPCHandler.swift in Sources */,
 				ADB3AE411FDEAE7200E283A0 /* AppDelegate.swift in Sources */,

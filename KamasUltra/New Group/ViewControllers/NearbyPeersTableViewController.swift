@@ -11,8 +11,6 @@ import MultipeerConnectivity
 
 class NearbyPeersTableViewController: UITableViewController {
     private var appDelegate: AppDelegate!
-    var peers = [Peer]()
-        
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +19,8 @@ class NearbyPeersTableViewController: UITableViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(NearbyPeersTableViewController.foundPeer(notification:)),
                                                name:Notifications.MPCFoundPeer, object: nil);
+        
+        self.tableView.reloadData()
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -37,26 +37,30 @@ class NearbyPeersTableViewController: UITableViewController {
     // MARK: - Handles table found and lost peers notifications
     
     @objc func foundPeer(notification: NSNotification) {
-        let userInfo = NSDictionary(dictionary: notification.userInfo!)
+        self.tableView.reloadData()
         
+        /*
+        let userInfo = NSDictionary(dictionary: notification.userInfo!)
         let peerID = userInfo.object(forKey: "peerID") as! MCPeerID
         
-        peers.append(Peer(peerID: peerID))
+        print("We are in: \(peerID.displayName)")
+        
+        appDelegate.peers.append(Peer(peerID: peerID))
         self.tableView.beginUpdates()
-        self.tableView.insertRows(at: [IndexPath(row: peers.count-1, section: 0)], with: .automatic)
-        self.tableView.endUpdates()
+        self.tableView.insertRows(at: [IndexPath(row: appDelegate.peers.count-1, section: 0)], with: .automatic)
+        self.tableView.endUpdates()*/
     }
     
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return Globals.shared.peers.count
     }
     
     
@@ -70,10 +74,10 @@ class NearbyPeersTableViewController: UITableViewController {
         }
         
         // Configure the cell...
-        let peer = peers[indexPath.row]
+        let peer = Globals.shared.peers[indexPath.row]
         
         cell.peerNameLabel.text = peer.peerID.displayName
-        cell.stateLabel.text = ""
+        cell.stateLabel.text = "Connected"
 
         return cell
     }

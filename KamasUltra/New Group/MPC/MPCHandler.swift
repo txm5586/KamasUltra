@@ -10,11 +10,11 @@ import UIKit
 import MultipeerConnectivity
 
 class MPCHandler: NSObject {
+    
     private let serviceType = Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
     
     private var peerID: MCPeerID
     private var session: MCSession!
-    
     private let browser: MCNearbyServiceBrowser
     private var advertiser: MCNearbyServiceAdvertiser!
     
@@ -23,11 +23,10 @@ class MPCHandler: NSObject {
         self.advertiser = MCNearbyServiceAdvertiser(peer: peerID, discoveryInfo: nil, serviceType: serviceType)
         self.browser = MCNearbyServiceBrowser(peer: peerID, serviceType: serviceType)
         
-        super.init()
-        
         //self.advertiser.delegate = self
         self.advertiser.startAdvertisingPeer()
         
+        super.init()
         self.browser.delegate = self
         self.browser.startBrowsingForPeers()
     }
@@ -39,11 +38,15 @@ class MPCHandler: NSObject {
 
 extension MPCHandler : MCNearbyServiceBrowserDelegate {
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
-        let userInfo = ["peerID": peerID] as [String : Any]
+        if !Globals.shared.peers.contains(where: { $0.peerID == peerID }) {
+            Globals.shared.peers.append(Peer(peerID: peerID))
+        }
+        
+        //let userInfo = ["peerID": peerID] as [String : Any]
         
         DispatchQueue.main.async {
             NotificationCenter.default.post(
-                name: Notifications.MPCFoundPeer, object: nil, userInfo: userInfo)
+                name: Notifications.MPCFoundPeer, object: nil, userInfo: nil)
         }
     }
     
@@ -52,6 +55,16 @@ extension MPCHandler : MCNearbyServiceBrowserDelegate {
     }
     
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
+        
+        //print("Before: \(Globals.sharedManager.peers.count)")
+        let peers = Globals.shared.peers.filter({$0.peerID != peerID})
+        Globals.shared.peers = peers
+        //print("After: \(Globals.sharedManager.peers.count)")
+        
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(
+                name: Notifications.MPCFoundPeer, object: nil, userInfo: nil)
+        }
         
     }
 }
