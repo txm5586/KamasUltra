@@ -24,6 +24,8 @@
 		ADB3AE481FDEAE7200E283A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB3AE471FDEAE7200E283A0 /* Assets.xcassets */; };
 		ADB3AE4B1FDEAE7200E283A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB3AE491FDEAE7200E283A0 /* LaunchScreen.storyboard */; };
 		BA1D29EF1FE2B8140016BF19 /* GifWaveAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D29EE1FE2B8140016BF19 /* GifWaveAnimation.swift */; };
+		BA41AF021FE4245400F05F05 /* SetMood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA41AF011FE4245400F05F05 /* SetMood.storyboard */; };
+		BA41AF041FE4246600F05F05 /* SetMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41AF031FE4246600F05F05 /* SetMoodViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		ADB3AE4A1FDEAE7200E283A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADB3AE4C1FDEAE7200E283A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA1D29EE1FE2B8140016BF19 /* GifWaveAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifWaveAnimation.swift; sourceTree = "<group>"; };
+		BA41AF011FE4245400F05F05 /* SetMood.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetMood.storyboard; sourceTree = "<group>"; };
+		BA41AF031FE4246600F05F05 /* SetMoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMoodViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 				AD6D20D41FE32A5200010790 /* Global */,
 				ADA19DFA1FE146DD0042D088 /* Peer2Peer */,
 				71ED293B1FE1461F00E1F2DD /* AnimatedBody */,
+				BA41AF001FE4241400F05F05 /* SetMood */,
 				ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */,
 				ADB3AE421FDEAE7200E283A0 /* ViewController.swift */,
 				ADB3AE441FDEAE7200E283A0 /* Main.storyboard */,
@@ -147,6 +152,16 @@
 				ADB3AE4C1FDEAE7200E283A0 /* Info.plist */,
 			);
 			path = KamasUltra;
+			sourceTree = "<group>";
+		};
+		BA41AF001FE4241400F05F05 /* SetMood */ = {
+			isa = PBXGroup;
+			children = (
+				BA41AF011FE4245400F05F05 /* SetMood.storyboard */,
+				BA41AF031FE4246600F05F05 /* SetMoodViewController.swift */,
+			);
+			name = SetMood;
+			path = ../SetMood;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +228,7 @@
 				ADB3AE481FDEAE7200E283A0 /* Assets.xcassets in Resources */,
 				ADA19DFC1FE147170042D088 /* Base.storyboard in Resources */,
 				ADB3AE461FDEAE7200E283A0 /* Main.storyboard in Resources */,
+				BA41AF021FE4245400F05F05 /* SetMood.storyboard in Resources */,
 				71ED293D1FE1465500E1F2DD /* AnimatedBody.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -232,6 +248,7 @@
 				ADB3AE431FDEAE7200E283A0 /* ViewController.swift in Sources */,
 				AD71957C1FE33E7E00F65030 /* GlobalVariables.swift in Sources */,
 				BA1D29EF1FE2B8140016BF19 /* GifWaveAnimation.swift in Sources */,
+				BA41AF041FE4246600F05F05 /* SetMoodViewController.swift in Sources */,
 				AD67CA481FE3049100838902 /* MPCHandler.swift in Sources */,
 				ADB3AE411FDEAE7200E283A0 /* AppDelegate.swift in Sources */,
 				AD6D20D31FE322A200010790 /* NearbyPeersTableViewCell.swift in Sources */,
