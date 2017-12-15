@@ -102,7 +102,7 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
-		ADA19DFA1FE146DD0042D088 /* P2P */ = {
+		ADA19DFA1FE146DD0042D088 /* Peer2Peer */ = {
 			isa = PBXGroup;
 			children = (
 				AD6D20CF1FE31CFE00010790 /* Models */,
@@ -110,7 +110,7 @@
 				AD67CA3F1FE2FCE300838902 /* ViewControllers */,
 				ADA19DFB1FE147170042D088 /* Base.storyboard */,
 			);
-			name = P2P;
+			name = Peer2Peer;
 			path = "New Group";
 			sourceTree = "<group>";
 		};
@@ -134,7 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				AD6D20D41FE32A5200010790 /* Global */,
-				ADA19DFA1FE146DD0042D088 /* P2P */,
+				ADA19DFA1FE146DD0042D088 /* Peer2Peer */,
 				71ED293B1FE1461F00E1F2DD /* AnimatedBody */,
 				ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */,
 				ADB3AE421FDEAE7200E283A0 /* ViewController.swift */,
