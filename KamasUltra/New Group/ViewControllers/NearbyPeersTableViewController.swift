@@ -13,15 +13,22 @@ class NearbyPeersTableViewController: UITableViewController {
     @IBOutlet weak var cancelButtonItem: UIBarButtonItem!
     @IBOutlet weak var doneButtomItem: UIBarButtonItem!
     
+    // MARK: Properties
     var connecting : Bool = false
+    private var appDelegate: AppDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+        // Setup Notifications
         NotificationCenter.default.addObserver(self, selector: #selector(NearbyPeersTableViewController.foundPeer(notification:)),
                                                name:Notifications.MPCFoundPeer, object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(NearbyPeersTableViewController.didChangeState(notification:)),
+                                               name:Notifications.MPCDidChangeState, object: nil);
         
-        //self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+        self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
         self.tableView.reloadData()
         
         self.doneButtomItem.isEnabled = false
@@ -51,6 +58,14 @@ class NearbyPeersTableViewController: UITableViewController {
         self.tableView.beginUpdates()
         self.tableView.insertRows(at: [IndexPath(row: appDelegate.peers.count-1, section: 0)], with: .automatic)
         self.tableView.endUpdates()*/
+    }
+    
+    @objc func didChangeState(notification: NSNotification) {
+        //let userInfo = NSDictionary(dictionary: notification.userInfo!)
+        
+        //let state = userInfo.object(forKey: "state") as! Int
+        //let peerID = userInfo.object(forKey: "peerID") as! MCPeerID
+        self.tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -83,7 +98,7 @@ class NearbyPeersTableViewController: UITableViewController {
         
         cell.peerID = peer.peerID
         cell.peerNameLabel.text = peer.peerID.displayName
-        cell.stateLabel.text = ""
+        cell.stateLabel.text = peer.state
         
         print("Assigned to cell: \(indexPath.row)")
         print("\t \(cell.peerID.displayName)")
@@ -104,11 +119,8 @@ class NearbyPeersTableViewController: UITableViewController {
             cell.stateLabel.text = Globals.state.connecting.rawValue
             
             if let peer = cell.peerID {
-                Globals.shared.mpchandler.invitePeer(peerID: peer)
-            } else {
-                
+                self.appDelegate.mpcHandler.invitePeer(peerID: peer)
             }
-            
         }
     }
 

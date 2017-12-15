@@ -12,12 +12,18 @@ import MultipeerConnectivity
 class MPCHandler: NSObject {
     private let serviceType = "kamasultraapp"//Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
     
-    private var peerID: MCPeerID
+    private var peerID: MCPeerID!
     private var session: MCSession!
-    private let browser: MCNearbyServiceBrowser
+    private var browser: MCNearbyServiceBrowser!
     private var advertiser: MCNearbyServiceAdvertiser!
     
     var connectedTo: MCPeerID?
+    
+    func setupBrowser() {
+        self.browser = MCNearbyServiceBrowser(peer: peerID, serviceType: serviceType)
+        self.browser.delegate = self
+        self.browser.startBrowsingForPeers()
+    }
     
     override init() {
         self.peerID = MCPeerID(displayName: UIDevice.current.name + String(arc4random() % 10))
@@ -50,8 +56,6 @@ class MPCHandler: NSObject {
     }
     
     func invitePeer(peerID: MCPeerID) {
-        
-        
         self.browser.invitePeer(self.peerID, to: self.session, withContext: nil, timeout: 10)
     }
 }
@@ -60,13 +64,10 @@ extension MPCHandler : MCNearbyServiceBrowserDelegate {
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
         if !Globals.shared.peers.contains(where: { $0.peerID == peerID }) {
             Globals.shared.peers.append(Peer(peerID: peerID))
-        }
-        
-        //let userInfo = ["peerID": peerID] as [String : Any]
-        
-        DispatchQueue.main.async {
-            NotificationCenter.default.post(
-                name: Notifications.MPCFoundPeer, object: nil, userInfo: nil)
+            DispatchQueue.main.async {
+                NotificationCenter.default.post(
+                    name: Notifications.MPCFoundPeer, object: nil, userInfo: nil)
+            }
         }
     }
     
@@ -98,12 +99,16 @@ extension MPCHandler : MCNearbyServiceAdvertiserDelegate {
         if connectedTo != nil {
             invitationHandler(false, nil)
         } else {
-            let alert = UIAlertController(title: "Alert", message: "Message", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            let alert = UIAlertController(title: "\(peerID.displayName) wants to connect", message: "Someone wants to play with you.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Accept", style: .default, handler: { _ in
+                invitationHandler(true, self.session)
+            }))
+            
+            alert.addAction(UIAlertAction(title: "Refuse", style:.cancel, handler: { _ in
+                invitationHandler(false, nil)
+            }))
             UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
-            //self.present(alert, animated: true, completion: nil)
         }
-        
     }
 }
 
@@ -113,7 +118,22 @@ extension MPCHandler : MCSessionDelegate {
     }
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+        let peers = Globals.shared.peers.filter({$0.peerID == peerID})
+        let peer = peers.first!
         
+        if state == MCSessionState.connected {
+            peer.state = Globals.state.connected.rawValue
+        } else if state == MCSessionState.notConnected {
+            peer.state = Globals.state.declined.rawValue
+        } else {
+            return
+        }
+        
+        let userInfo = ["peerID": peerID, "state": state.rawValue] as [String : Any]
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(
+                name: Notifications.MPCDidChangeState, object: nil, userInfo: userInfo)
+        }
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {

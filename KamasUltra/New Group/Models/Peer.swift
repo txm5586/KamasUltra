@@ -10,10 +10,11 @@ import Foundation
 import MultipeerConnectivity
 
 class Peer {
-    var state: String!
+    var state: String
     var peerID: MCPeerID
     
     init(peerID: MCPeerID) {
+        self.state = ""
         self.peerID = peerID
     }
 }
