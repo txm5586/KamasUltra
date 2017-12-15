@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E9D95391FE4087F0051E9E9 /* Waiting screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9D95381FE4087F0051E9E9 /* Waiting screen.storyboard */; };
+		4E9D953B1FE409BF0051E9E9 /* WaitingForPartnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D953A1FE409BF0051E9E9 /* WaitingForPartnerViewController.swift */; };
 		71ED293D1FE1465500E1F2DD /* AnimatedBody.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ED293C1FE1465500E1F2DD /* AnimatedBody.storyboard */; };
 		71ED293F1FE148C800E1F2DD /* AnimatedBodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ED293E1FE148C800E1F2DD /* AnimatedBodyViewController.swift */; };
 		AD67CA421FE2FD2400838902 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CA411FE2FD2400838902 /* PlayViewController.swift */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E9D95381FE4087F0051E9E9 /* Waiting screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Waiting screen.storyboard"; sourceTree = "<group>"; };
+		4E9D953A1FE409BF0051E9E9 /* WaitingForPartnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingForPartnerViewController.swift; sourceTree = "<group>"; };
 		71ED293C1FE1465500E1F2DD /* AnimatedBody.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimatedBody.storyboard; sourceTree = "<group>"; };
 		71ED293E1FE148C800E1F2DD /* AnimatedBodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedBodyViewController.swift; sourceTree = "<group>"; };
 		AD67CA411FE2FD2400838902 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +61,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E9D95371FE408470051E9E9 /* Waiting partner screen */ = {
+			isa = PBXGroup;
+			children = (
+				4E9D95381FE4087F0051E9E9 /* Waiting screen.storyboard */,
+				4E9D953A1FE409BF0051E9E9 /* WaitingForPartnerViewController.swift */,
+			);
+			path = "Waiting partner screen";
+			sourceTree = "<group>";
+		};
 		71ED293B1FE1461F00E1F2DD /* AnimatedBody */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +146,7 @@
 		ADB3AE3F1FDEAE7200E283A0 /* KamasUltra */ = {
 			isa = PBXGroup;
 			children = (
+				4E9D95371FE408470051E9E9 /* Waiting partner screen */,
 				AD6D20D41FE32A5200010790 /* Global */,
 				ADA19DFA1FE146DD0042D088 /* P2P */,
 				71ED293B1FE1461F00E1F2DD /* AnimatedBody */,
@@ -210,6 +224,7 @@
 				ADA19DFC1FE147170042D088 /* Base.storyboard in Resources */,
 				ADB3AE461FDEAE7200E283A0 /* Main.storyboard in Resources */,
 				71ED293D1FE1465500E1F2DD /* AnimatedBody.storyboard in Resources */,
+				4E9D95391FE4087F0051E9E9 /* Waiting screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +244,7 @@
 				AD71957C1FE33E7E00F65030 /* GlobalVariables.swift in Sources */,
 				BA1D29EF1FE2B8140016BF19 /* GifWaveAnimation.swift in Sources */,
 				AD67CA481FE3049100838902 /* MPCHandler.swift in Sources */,
+				4E9D953B1FE409BF0051E9E9 /* WaitingForPartnerViewController.swift in Sources */,
 				ADB3AE411FDEAE7200E283A0 /* AppDelegate.swift in Sources */,
 				AD6D20D31FE322A200010790 /* NearbyPeersTableViewCell.swift in Sources */,
 			);
@@ -368,10 +384,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JWYZUH34NP;
+				DEVELOPMENT_TEAM = C73Z9HRNQ8;
 				INFOPLIST_FILE = KamasUltra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DrunGeek.KamasUltra;
+				PRODUCT_BUNDLE_IDENTIFIER = DrunGeeks.KamasUltra;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -383,10 +399,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JWYZUH34NP;
+				DEVELOPMENT_TEAM = C73Z9HRNQ8;
 				INFOPLIST_FILE = KamasUltra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DrunGeek.KamasUltra;
+				PRODUCT_BUNDLE_IDENTIFIER = DrunGeeks.KamasUltra;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
