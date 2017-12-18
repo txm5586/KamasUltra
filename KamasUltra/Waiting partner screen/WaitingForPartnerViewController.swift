@@ -28,17 +28,36 @@ class WaitingForPartnerViewController: UIViewController {
         animationGroup.animations = [cardiogramPulse]
         cardiogramOutlet.layer.add(animationGroup, forKey: "pulse")
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3.0) {
-            self.tipsLabel.text = self.sexualTips[Int(arc4random_uniform(UInt32(self.sexualTips.count)))]
-        }
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3.0) {
+//            self.tipsLabel.text = self.sexualTips[Int(arc4random_uniform(UInt32(self.sexualTips.count)))]
+//        }
+        countdownTimer()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+        
+    func countdownTimer() {
+        timer = Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(WaitingForPartnerViewController.countdownTick), userInfo: nil, repeats: true)
+    }
     
-
+    @objc func countdownTick() {
+        countdown -= 1
+        
+        UIView.animate(withDuration: 3) {
+            self.tipsLabel.alpha = 0
+            self.tipsLabel.text = self.sexualTips[self.countdown]
+            self.tipsLabel.alpha = 0.6
+        }
+        
+        if countdown == 0 {
+            countdown = sexualTips.count
+        }
+        
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -52,5 +71,6 @@ class WaitingForPartnerViewController: UIViewController {
     @IBOutlet weak var cardiogramOutlet: UIImageView!
     @IBOutlet weak var tipsLabel: UILabel!
     var sexualTips: [String] = ["Touching your partner increases intimacy.", "Think about what surrounds and try to create an atmosphere for intimacy."]
-
+    var timer: Timer? = nil
+    var countdown = 2 //sexualTips.count
 }
