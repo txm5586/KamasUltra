@@ -408,7 +408,7 @@
 				DEVELOPMENT_TEAM = JWYZUH34NP;
 				INFOPLIST_FILE = KamasUltra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DrunGeek.KamasUltra2;
+				PRODUCT_BUNDLE_IDENTIFIER = DrunGeek.ADA.KamasUltra;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -425,7 +425,7 @@
 				DEVELOPMENT_TEAM = JWYZUH34NP;
 				INFOPLIST_FILE = KamasUltra/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DrunGeek.KamasUltra2;
+				PRODUCT_BUNDLE_IDENTIFIER = DrunGeek.ADA.KamasUltra;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
