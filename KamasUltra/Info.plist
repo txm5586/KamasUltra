@@ -23,7 +23,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>AnimatedBody</string>
 	<key>UIMainStoryboardFile</key>
-	<string>AnimatedBody</string>
+	<string>Waiting screen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
