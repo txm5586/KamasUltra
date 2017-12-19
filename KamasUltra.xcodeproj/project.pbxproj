@@ -25,6 +25,7 @@
 		ADB3AE461FDEAE7200E283A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB3AE441FDEAE7200E283A0 /* Main.storyboard */; };
 		ADB3AE481FDEAE7200E283A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB3AE471FDEAE7200E283A0 /* Assets.xcassets */; };
 		ADB3AE4B1FDEAE7200E283A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB3AE491FDEAE7200E283A0 /* LaunchScreen.storyboard */; };
+		BA0CAACD1FE92F50009B5E12 /* waveGifGradient.gif in Resources */ = {isa = PBXBuildFile; fileRef = BA0CAACC1FE92F50009B5E12 /* waveGifGradient.gif */; };
 		BA1D29EF1FE2B8140016BF19 /* GifWaveAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D29EE1FE2B8140016BF19 /* GifWaveAnimation.swift */; };
 		BA6B0F0E1FE4288A0058B9EA /* SetMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B0F0C1FE4288A0058B9EA /* SetMoodViewController.swift */; };
 		BA6B0F0F1FE4288A0058B9EA /* SetMood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6B0F0D1FE4288A0058B9EA /* SetMood.storyboard */; };
@@ -53,6 +54,7 @@
 		ADB3AE471FDEAE7200E283A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADB3AE4A1FDEAE7200E283A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADB3AE4C1FDEAE7200E283A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA0CAACC1FE92F50009B5E12 /* waveGifGradient.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = waveGifGradient.gif; sourceTree = "<group>"; };
 		BA1D29EE1FE2B8140016BF19 /* GifWaveAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifWaveAnimation.swift; sourceTree = "<group>"; };
 		BA6B0F0C1FE4288A0058B9EA /* SetMoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetMoodViewController.swift; sourceTree = "<group>"; };
 		BA6B0F0D1FE4288A0058B9EA /* SetMood.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SetMood.storyboard; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				71ED293C1FE1465500E1F2DD /* AnimatedBody.storyboard */,
 				71ED293E1FE148C800E1F2DD /* AnimatedBodyViewController.swift */,
 				BA1D29EE1FE2B8140016BF19 /* GifWaveAnimation.swift */,
+				BA0CAACC1FE92F50009B5E12 /* waveGifGradient.gif */,
 				BADDA3401FE5485600D7D907 /* waveGif.gif */,
 			);
 			path = AnimatedBody;
@@ -243,6 +246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BADDA3411FE5485600D7D907 /* waveGif.gif in Resources */,
+				BA0CAACD1FE92F50009B5E12 /* waveGifGradient.gif in Resources */,
 				ADB3AE4B1FDEAE7200E283A0 /* LaunchScreen.storyboard in Resources */,
 				ADB3AE481FDEAE7200E283A0 /* Assets.xcassets in Resources */,
 				ADA19DFC1FE147170042D088 /* Base.storyboard in Resources */,

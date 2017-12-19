@@ -89,7 +89,7 @@ class AnimatedBodyViewController: UIViewController {
         self.bodyVIew.addGestureRecognizer(tap) //Add the tap gesture recognizerer to the body
         
         //Assing wave gif
-        waveGif.loadGif(name: "waveGif")
+        waveGif.loadGif(name: "waveGifGradient")
         waveGif.backgroundColor = UIColor.white
     }
     
