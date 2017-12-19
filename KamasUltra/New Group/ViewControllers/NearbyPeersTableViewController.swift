@@ -100,9 +100,6 @@ class NearbyPeersTableViewController: UITableViewController {
         cell.peerNameLabel.text = peer.peerID.displayName
         cell.stateLabel.text = peer.state
         
-        print("Assigned to cell: \(indexPath.row)")
-        print("\t \(cell.peerID.displayName)")
-        
         return cell
     }
     
@@ -116,11 +113,19 @@ class NearbyPeersTableViewController: UITableViewController {
         if indexPath.row > 0 {
             guard let cell = tableView.cellForRow(at: indexPath) as? NearbyPeersTableViewCell
                 else { fatalError("The dequeued cell is not an instance of NearbyPeersTableViewCell.") }
+            
             cell.stateLabel.text = Globals.state.connecting.rawValue
             
-            if let peer = cell.peerID {
-                self.appDelegate.mpcHandler.invitePeer(peerID: peer)
+            self.connecting = true
+            let peers = Globals.shared.peers.filter({$0.peerID == cell.peerID})
+            let peer = peers.first!
+            peer.state = Globals.state.connecting.rawValue
+            
+            if let mcPeer = cell.peerID {
+                self.appDelegate.mpcHandler.invitePeer(peerID: mcPeer)
             }
+            
+            
         }
     }
 

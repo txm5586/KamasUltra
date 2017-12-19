@@ -9,68 +9,78 @@
 import UIKit
 
 class WaitingForPartnerViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let cardiogramPulse = CASpringAnimation(keyPath: "transform.scale")
-        cardiogramPulse.duration = 0.6
-        cardiogramPulse.fromValue = 1.0
-        cardiogramPulse.toValue = 1.12
-        cardiogramPulse.autoreverses = true
-        cardiogramPulse.repeatCount = 1
-        cardiogramPulse.initialVelocity = 0.5
-        cardiogramPulse.damping = 0.8
-        
-        let animationGroup = CAAnimationGroup()
-        animationGroup.duration = 2.7
-        animationGroup.repeatCount = 1000
-        animationGroup.animations = [cardiogramPulse]
-        cardiogramOutlet.layer.add(animationGroup, forKey: "pulse")
-        
-//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3.0) {
-//            self.tipsLabel.text = self.sexualTips[Int(arc4random_uniform(UInt32(self.sexualTips.count)))]
-//        }
+        animateDot()
+        countdownTick(self)
         countdownTimer()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-        
+    
     func countdownTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 8.0, target: self, selector: #selector(WaitingForPartnerViewController.countdownTick), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 7, target: self, selector: #selector(WaitingForPartnerViewController.countdownTick), userInfo: nil, repeats: true)
     }
     
-    @objc func countdownTick() {
+    
+    @objc func countdownTick(_ sender: AnyObject) {
         countdown -= 1
-        
-        UIView.animate(withDuration: 3) {
-            self.tipsLabel.alpha = 0
+        // fade in
+        UIView.animate(withDuration: 1.5, animations: {
             self.tipsLabel.text = self.sexualTips[self.countdown]
             self.tipsLabel.alpha = 0.6
+        })
+        { (true) in
+            // fade out
+            sleep(4)
+            UIView.animate(withDuration: 1.5, animations: {
+                self.tipsLabel.alpha = 0.0
+            })
         }
         
         if countdown == 0 {
             countdown = sexualTips.count
         }
+    }
+    
+    func animateDot () -> Void {
+        let dotSpring = CASpringAnimation(keyPath: "transform.scale")
+        dotSpring.duration = 0.6
+        dotSpring.fromValue = 1.0
+        dotSpring.toValue = 1.12
+        dotSpring.autoreverses = true
+        dotSpring.repeatCount = 1
+        dotSpring.initialVelocity = 0.5
+        dotSpring.damping = 0.8
         
+        let animationGroup = CAAnimationGroup()
+        animationGroup.duration = 2.7
+        animationGroup.repeatCount = 1000
+        animationGroup.animations = [dotSpring]
+        springingDot.layer.add(animationGroup, forKey: "pulse")
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    @IBOutlet weak var cardiogramOutlet: UIImageView!
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
+    @IBOutlet weak var springingDot: UIImageView!
     @IBOutlet weak var tipsLabel: UILabel!
-    var sexualTips: [String] = ["Touching your partner increases intimacy.", "Think about what surrounds and try to create an atmosphere for intimacy."]
+    var sexualTips: [String] = ["Touching your partner increases intimacy.",
+                                "Think about what surrounds and try to create an atmosphere for intimacy.",
+                                "Eating fruits while foreplay increases enjoyness",
+                                "Massaging the partner is a great way to increase intimacy and sensuality",
+                                "Try keeping eye contact with your partner.\n\nIt is a great way to connect and create more intimacy"]
     var timer: Timer? = nil
-    var countdown = 2 //sexualTips.count
+    var countdown: Int = 5
 }
