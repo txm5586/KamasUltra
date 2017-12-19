@@ -29,7 +29,7 @@
 		AD6D20D61FE32A6A00010790 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6D20D51FE32A6A00010790 /* Notifications.swift */; };
 		AD71957C1FE33E7E00F65030 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD71957B1FE33E7E00F65030 /* GlobalVariables.swift */; };
 		AD7195811FE40C3000F65030 /* SearchingIndicatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7195801FE40C3000F65030 /* SearchingIndicatorTableViewCell.swift */; };
-		ADA19DFC1FE147170042D088 /* Base.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADA19DFB1FE147170042D088 /* Base.storyboard */; };
+		ADA19DFC1FE147170042D088 /* Peer2Peer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADA19DFB1FE147170042D088 /* Peer2Peer.storyboard */; };
 		ADB3AE411FDEAE7200E283A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */; };
 		ADB3AE431FDEAE7200E283A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB3AE421FDEAE7200E283A0 /* ViewController.swift */; };
 		ADB3AE461FDEAE7200E283A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB3AE441FDEAE7200E283A0 /* Main.storyboard */; };
@@ -63,7 +63,7 @@
 		AD6D20D51FE32A6A00010790 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		AD71957B1FE33E7E00F65030 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		AD7195801FE40C3000F65030 /* SearchingIndicatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingIndicatorTableViewCell.swift; sourceTree = "<group>"; };
-		ADA19DFB1FE147170042D088 /* Base.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Base.storyboard; sourceTree = "<group>"; };
+		ADA19DFB1FE147170042D088 /* Peer2Peer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Peer2Peer.storyboard; sourceTree = "<group>"; };
 		ADB3AE3D1FDEAE7200E283A0 /* KamasUltra.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KamasUltra.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB3AE401FDEAE7200E283A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADB3AE421FDEAE7200E283A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -165,7 +165,7 @@
 				AD6D20CF1FE31CFE00010790 /* Models */,
 				AD67CA401FE2FCEF00838902 /* MPC */,
 				AD67CA3F1FE2FCE300838902 /* ViewControllers */,
-				ADA19DFB1FE147170042D088 /* Base.storyboard */,
+				ADA19DFB1FE147170042D088 /* Peer2Peer.storyboard */,
 			);
 			name = Peer2Peer;
 			path = "New Group";
@@ -281,7 +281,7 @@
 				ADB3AE4B1FDEAE7200E283A0 /* LaunchScreen.storyboard in Resources */,
 				4BAF77721FE80F660035C7D3 /* SendNudesStoryboard.storyboard in Resources */,
 				ADB3AE481FDEAE7200E283A0 /* Assets.xcassets in Resources */,
-				ADA19DFC1FE147170042D088 /* Base.storyboard in Resources */,
+				ADA19DFC1FE147170042D088 /* Peer2Peer.storyboard in Resources */,
 				ADB3AE461FDEAE7200E283A0 /* Main.storyboard in Resources */,
 				71AB62551FE9568400D84359 /* excitement.gif in Resources */,
 				71AB62591FE9568400D84359 /* mistery.gif in Resources */,
@@ -453,11 +453,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KES8GT6MF7;
+                DEVELOPMENT_TEAM = KES8GT6MF7;
 				INFOPLIST_FILE = KamasUltra/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DrunGeek.KamasUltra2;
+                PRODUCT_BUNDLE_IDENTIFIER = DrunGeek.KamasUltra2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
@@ -471,11 +471,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = KES8GT6MF7;
+                DEVELOPMENT_TEAM = KES8GT6MF7;
 				INFOPLIST_FILE = KamasUltra/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = DrunGeek.KamasUltra2;
+                PRODUCT_BUNDLE_IDENTIFIER = DrunGeek.KamasUltra2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
