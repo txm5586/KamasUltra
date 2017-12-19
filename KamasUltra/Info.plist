@@ -23,7 +23,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>AnimatedBody</string>
 	<key>UIMainStoryboardFile</key>
-	<string>SendNudesStoryboard</string>
+	<string>SetMood</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

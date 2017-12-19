@@ -11,6 +11,14 @@
 		4BAF77741FE8103D0035C7D3 /* SendNudesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAF77731FE8103D0035C7D3 /* SendNudesViewController.swift */; };
 		4E9D95391FE4087F0051E9E9 /* Waiting screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E9D95381FE4087F0051E9E9 /* Waiting screen.storyboard */; };
 		4E9D953B1FE409BF0051E9E9 /* WaitingForPartnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9D953A1FE409BF0051E9E9 /* WaitingForPartnerViewController.swift */; };
+		71AB62541FE9568400D84359 /* crazy.gif in Resources */ = {isa = PBXBuildFile; fileRef = 71AB624C1FE9568300D84359 /* crazy.gif */; };
+		71AB62551FE9568400D84359 /* excitement.gif in Resources */ = {isa = PBXBuildFile; fileRef = 71AB624D1FE9568300D84359 /* excitement.gif */; };
+		71AB62561FE9568400D84359 /* luxury.gif in Resources */ = {isa = PBXBuildFile; fileRef = 71AB624E1FE9568300D84359 /* luxury.gif */; };
+		71AB62571FE9568400D84359 /* fun.gif in Resources */ = {isa = PBXBuildFile; fileRef = 71AB624F1FE9568300D84359 /* fun.gif */; };
+		71AB62581FE9568400D84359 /* relaxing.gif in Resources */ = {isa = PBXBuildFile; fileRef = 71AB62501FE9568400D84359 /* relaxing.gif */; };
+		71AB62591FE9568400D84359 /* mistery.gif in Resources */ = {isa = PBXBuildFile; fileRef = 71AB62511FE9568400D84359 /* mistery.gif */; };
+		71AB625A1FE9568400D84359 /* romantic.gif in Resources */ = {isa = PBXBuildFile; fileRef = 71AB62521FE9568400D84359 /* romantic.gif */; };
+		71AB625B1FE9568400D84359 /* default.gif in Resources */ = {isa = PBXBuildFile; fileRef = 71AB62531FE9568400D84359 /* default.gif */; };
 		71ED293D1FE1465500E1F2DD /* AnimatedBody.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ED293C1FE1465500E1F2DD /* AnimatedBody.storyboard */; };
 		71ED293F1FE148C800E1F2DD /* AnimatedBodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ED293E1FE148C800E1F2DD /* AnimatedBodyViewController.swift */; };
 		AD67CA421FE2FD2400838902 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CA411FE2FD2400838902 /* PlayViewController.swift */; };
@@ -27,12 +35,9 @@
 		ADB3AE461FDEAE7200E283A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB3AE441FDEAE7200E283A0 /* Main.storyboard */; };
 		ADB3AE481FDEAE7200E283A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADB3AE471FDEAE7200E283A0 /* Assets.xcassets */; };
 		ADB3AE4B1FDEAE7200E283A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADB3AE491FDEAE7200E283A0 /* LaunchScreen.storyboard */; };
-		BA0CAACD1FE92F50009B5E12 /* waveGifGradient.gif in Resources */ = {isa = PBXBuildFile; fileRef = BA0CAACC1FE92F50009B5E12 /* waveGifGradient.gif */; };
 		BA1D29EF1FE2B8140016BF19 /* GifWaveAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D29EE1FE2B8140016BF19 /* GifWaveAnimation.swift */; };
 		BA6B0F0E1FE4288A0058B9EA /* SetMoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6B0F0C1FE4288A0058B9EA /* SetMoodViewController.swift */; };
 		BA6B0F0F1FE4288A0058B9EA /* SetMood.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA6B0F0D1FE4288A0058B9EA /* SetMood.storyboard */; };
-		BA7EDAB61FE81EE800C64EDA /* MoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7EDAB51FE81EE800C64EDA /* MoodViewController.swift */; };
-		BADDA3411FE5485600D7D907 /* waveGif.gif in Resources */ = {isa = PBXBuildFile; fileRef = BADDA3401FE5485600D7D907 /* waveGif.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +45,14 @@
 		4BAF77731FE8103D0035C7D3 /* SendNudesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendNudesViewController.swift; sourceTree = "<group>"; };
 		4E9D95381FE4087F0051E9E9 /* Waiting screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Waiting screen.storyboard"; sourceTree = "<group>"; };
 		4E9D953A1FE409BF0051E9E9 /* WaitingForPartnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingForPartnerViewController.swift; sourceTree = "<group>"; };
+		71AB624C1FE9568300D84359 /* crazy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = crazy.gif; sourceTree = "<group>"; };
+		71AB624D1FE9568300D84359 /* excitement.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = excitement.gif; sourceTree = "<group>"; };
+		71AB624E1FE9568300D84359 /* luxury.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = luxury.gif; sourceTree = "<group>"; };
+		71AB624F1FE9568300D84359 /* fun.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fun.gif; sourceTree = "<group>"; };
+		71AB62501FE9568400D84359 /* relaxing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = relaxing.gif; sourceTree = "<group>"; };
+		71AB62511FE9568400D84359 /* mistery.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = mistery.gif; sourceTree = "<group>"; };
+		71AB62521FE9568400D84359 /* romantic.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = romantic.gif; sourceTree = "<group>"; };
+		71AB62531FE9568400D84359 /* default.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = default.gif; sourceTree = "<group>"; };
 		71ED293C1FE1465500E1F2DD /* AnimatedBody.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AnimatedBody.storyboard; sourceTree = "<group>"; };
 		71ED293E1FE148C800E1F2DD /* AnimatedBodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedBodyViewController.swift; sourceTree = "<group>"; };
 		AD67CA411FE2FD2400838902 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
@@ -58,12 +71,9 @@
 		ADB3AE471FDEAE7200E283A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADB3AE4A1FDEAE7200E283A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADB3AE4C1FDEAE7200E283A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA0CAACC1FE92F50009B5E12 /* waveGifGradient.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = waveGifGradient.gif; sourceTree = "<group>"; };
 		BA1D29EE1FE2B8140016BF19 /* GifWaveAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifWaveAnimation.swift; sourceTree = "<group>"; };
 		BA6B0F0C1FE4288A0058B9EA /* SetMoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetMoodViewController.swift; sourceTree = "<group>"; };
 		BA6B0F0D1FE4288A0058B9EA /* SetMood.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SetMood.storyboard; sourceTree = "<group>"; };
-		BA7EDAB51FE81EE800C64EDA /* MoodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodViewController.swift; sourceTree = "<group>"; };
-		BADDA3401FE5485600D7D907 /* waveGif.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = waveGif.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +111,14 @@
 				71ED293C1FE1465500E1F2DD /* AnimatedBody.storyboard */,
 				71ED293E1FE148C800E1F2DD /* AnimatedBodyViewController.swift */,
 				BA1D29EE1FE2B8140016BF19 /* GifWaveAnimation.swift */,
-				BA0CAACC1FE92F50009B5E12 /* waveGifGradient.gif */,
-				BADDA3401FE5485600D7D907 /* waveGif.gif */,
+				71AB624C1FE9568300D84359 /* crazy.gif */,
+				71AB62531FE9568400D84359 /* default.gif */,
+				71AB624D1FE9568300D84359 /* excitement.gif */,
+				71AB624F1FE9568300D84359 /* fun.gif */,
+				71AB624E1FE9568300D84359 /* luxury.gif */,
+				71AB62511FE9568400D84359 /* mistery.gif */,
+				71AB62501FE9568400D84359 /* relaxing.gif */,
+				71AB62521FE9568400D84359 /* romantic.gif */,
 			);
 			path = AnimatedBody;
 			sourceTree = "<group>";
@@ -195,7 +211,6 @@
 			children = (
 				BA6B0F0D1FE4288A0058B9EA /* SetMood.storyboard */,
 				BA6B0F0C1FE4288A0058B9EA /* SetMoodViewController.swift */,
-				BA7EDAB51FE81EE800C64EDA /* MoodViewController.swift */,
 			);
 			path = SetMood;
 			sourceTree = "<group>";
@@ -259,15 +274,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BADDA3411FE5485600D7D907 /* waveGif.gif in Resources */,
-				BA0CAACD1FE92F50009B5E12 /* waveGifGradient.gif in Resources */,
+				71AB62581FE9568400D84359 /* relaxing.gif in Resources */,
+				71AB62571FE9568400D84359 /* fun.gif in Resources */,
+				71AB62541FE9568400D84359 /* crazy.gif in Resources */,
+				71AB62561FE9568400D84359 /* luxury.gif in Resources */,
 				ADB3AE4B1FDEAE7200E283A0 /* LaunchScreen.storyboard in Resources */,
 				4BAF77721FE80F660035C7D3 /* SendNudesStoryboard.storyboard in Resources */,
 				ADB3AE481FDEAE7200E283A0 /* Assets.xcassets in Resources */,
 				ADA19DFC1FE147170042D088 /* Base.storyboard in Resources */,
 				ADB3AE461FDEAE7200E283A0 /* Main.storyboard in Resources */,
+				71AB62551FE9568400D84359 /* excitement.gif in Resources */,
+				71AB62591FE9568400D84359 /* mistery.gif in Resources */,
 				BA6B0F0F1FE4288A0058B9EA /* SetMood.storyboard in Resources */,
+				71AB625B1FE9568400D84359 /* default.gif in Resources */,
 				71ED293D1FE1465500E1F2DD /* AnimatedBody.storyboard in Resources */,
+				71AB625A1FE9568400D84359 /* romantic.gif in Resources */,
 				4E9D95391FE4087F0051E9E9 /* Waiting screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +305,6 @@
 				71ED293F1FE148C800E1F2DD /* AnimatedBodyViewController.swift in Sources */,
 				AD6D20D11FE31D1700010790 /* Peer.swift in Sources */,
 				AD67CA421FE2FD2400838902 /* PlayViewController.swift in Sources */,
-				BA7EDAB61FE81EE800C64EDA /* MoodViewController.swift in Sources */,
 				AD67CA461FE3033400838902 /* NearbyPeersTableViewController.swift in Sources */,
 				ADB3AE431FDEAE7200E283A0 /* ViewController.swift in Sources */,
 				AD71957C1FE33E7E00F65030 /* GlobalVariables.swift in Sources */,

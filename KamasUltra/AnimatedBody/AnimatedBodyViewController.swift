@@ -11,6 +11,7 @@ import AudioToolbox
 
 class AnimatedBodyViewController: UIViewController {
     
+    
     @IBOutlet weak var selectActionLabel: UILabel!
     var enableSwipe = 1 //if 1 enable the swipe to move the gradient and select the body part
     var enableTouch = 0 //if 1 enable the tap on the body when it's small to return fullscreen
@@ -73,11 +74,11 @@ class AnimatedBodyViewController: UIViewController {
     
     //Our colors for the gradient
     //Light blue
-    let gradientColor1 = UIColor(red: 53/255, green: 208/255, blue: 243/255, alpha: 1).cgColor
-    //Dark green
-    let gradientColor2 = UIColor(red: 24/255, green: 129/255, blue: 125/255, alpha: 1).cgColor
-    //Red
-    let gradientColor3 = UIColor(red: 255/255, green: 55/255, blue: 55/255, alpha: 1).cgColor
+//    let gradientColor1 = UIColor(red: 53/255, green: 208/255, blue: 243/255, alpha: 1).cgColor
+//    //Dark green
+//    let gradientColor2 = UIColor(red: 24/255, green: 129/255, blue: 125/255, alpha: 1).cgColor
+//    //Red
+//    let gradientColor3 = UIColor(red: 255/255, green: 55/255, blue: 55/255, alpha: 1).cgColor
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,7 +90,7 @@ class AnimatedBodyViewController: UIViewController {
         self.bodyVIew.addGestureRecognizer(tap) //Add the tap gesture recognizerer to the body
         
         //Assing wave gif
-        waveGif.loadGif(name: "waveGifGradient")
+        waveGif.loadGif(name: Mood.moodGif)
         waveGif.backgroundColor = UIColor.white
     }
     
@@ -112,10 +113,12 @@ class AnimatedBodyViewController: UIViewController {
         
         gradientLayer = CAGradientLayer()
         gradientLayer.frame = bodyVIew.bounds
-        gradientLayer.colors = [gradientColor1,gradientColor2, gradientColor3,gradientColor2,gradientColor1]
+        gradientLayer.colors = [Mood.gradientColor1,Mood.gradientColor2,UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1).cgColor, Mood.gradientColor3,Mood.gradientColor4]
         gradientLayer.locations = [a,b,c,d,e]
         gradientLayer.speed = 1000 //made the speed of the gradient bigger to make it follow the tap without delay
         bodyVIew.layer.addSublayer(gradientLayer)
+        
+        
     }
     
     //func called when the user touches the body to move the gradient

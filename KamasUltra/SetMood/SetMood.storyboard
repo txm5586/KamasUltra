@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vWH-m2-hyC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rdF-sB-tc9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,31 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Mood View Controller-->
-        <scene sceneID="puk-jB-Ghi">
-            <objects>
-                <viewController id="vWH-m2-hyC" customClass="MoodViewController" customModule="KamasUltra" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Qg1-hx-MV2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WuF-tQ-4DL">
-                                <rect key="frame" x="293" y="20" width="66" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Set Mood"/>
-                                <connections>
-                                    <segue destination="rdF-sB-tc9" kind="presentation" modalPresentationStyle="overCurrentContext" id="0AZ-i8-yfV"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="1Fx-sD-g70"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mWr-Sd-Y3X" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-55.200000000000003" y="178.56071964017991"/>
-        </scene>
         <!--Set Mood View Controller-->
         <scene sceneID="xTp-79-Aej">
             <objects>
@@ -47,33 +22,120 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSo-Ni-nAV">
-                                        <rect key="frame" x="246" y="104" width="55" height="46"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LSo-Ni-nAV">
+                                        <rect key="frame" x="211" y="79" width="145" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button2"/>
+                                        <state key="normal" title="luxury" image="luxury"/>
                                         <connections>
-                                            <segue destination="uS0-Fp-jWz" kind="unwind" unwindAction="unwindSegue2:" id="38f-jx-omU"/>
+                                            <action selector="luxury:" destination="rdF-sB-tc9" eventType="touchUpInside" id="S2n-si-lsd"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Heh-kV-5es">
-                                        <rect key="frame" x="73" y="104" width="53" height="48"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Heh-kV-5es">
+                                        <rect key="frame" x="25" y="79" width="145" height="115"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button1"/>
+                                        <state key="normal" title="default" image="default"/>
                                         <connections>
-                                            <segue destination="uS0-Fp-jWz" kind="unwind" unwindAction="unwindSegue:" id="g7z-3S-4oM"/>
+                                            <action selector="defaultButton:" destination="rdF-sB-tc9" eventType="touchUpInside" id="Ruc-I6-mU7"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SCz-ay-6pd">
+                                        <rect key="frame" x="211" y="223" width="145" height="115"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="relaxing" image="relaxing"/>
+                                        <connections>
+                                            <action selector="relaxingButton:" destination="rdF-sB-tc9" eventType="touchUpInside" id="49f-oC-ech"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUb-5k-D7E">
+                                        <rect key="frame" x="25" y="378" width="145" height="115"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="romantic" image="romantic"/>
+                                        <connections>
+                                            <action selector="romanticButton:" destination="rdF-sB-tc9" eventType="touchUpInside" id="pqM-gt-45J"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Mj-Iu-8Vw">
+                                        <rect key="frame" x="211" y="378" width="145" height="115"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="fun" image="fun"/>
+                                        <connections>
+                                            <action selector="funButton:" destination="rdF-sB-tc9" eventType="touchUpInside" id="Vuq-6C-gqp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sz-xW-9iJ">
+                                        <rect key="frame" x="25" y="525" width="145" height="115"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="excitement" image="excitement"/>
+                                        <connections>
+                                            <action selector="excitementButton:" destination="rdF-sB-tc9" eventType="touchUpInside" id="ahU-iP-0TD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KVB-n6-KwW">
+                                        <rect key="frame" x="211" y="525" width="145" height="115"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="crazy" image="crazy"/>
+                                        <connections>
+                                            <action selector="crazyButton:" destination="rdF-sB-tc9" eventType="touchUpInside" id="CRa-KJ-Hgq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5s-sV-Ud2">
+                                        <rect key="frame" x="25" y="224" width="145" height="115"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="mistery" image="mistery"/>
+                                        <connections>
+                                            <action selector="misteryButton:" destination="rdF-sB-tc9" eventType="touchUpInside" id="50h-kB-pTy"/>
+                                        </connections>
+                                    </button>
+                                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NVd-gT-jme">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <items>
+                                            <navigationItem title="Mood" id="ryf-lb-9k7">
+                                                <barButtonItem key="rightBarButtonItem" systemItem="save" id="NZI-ye-k9z">
+                                                    <connections>
+                                                        <segue destination="j3h-nL-6Xh" kind="show" id="e0n-u6-upl"/>
+                                                    </connections>
+                                                </barButtonItem>
+                                            </navigationItem>
+                                        </items>
+                                    </navigationBar>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="PU4-3F-jvX">
+                                        <rect key="frame" x="25" y="79" width="145" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.50381212349397586" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="b9v-f7-2aT"/>
                     </view>
+                    <connections>
+                        <outlet property="TickImage" destination="PU4-3F-jvX" id="mDf-nl-aiV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syN-JZ-KOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="uS0-Fp-jWz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="604" y="178.56071964017991"/>
+            <point key="canvasLocation" x="821.60000000000002" y="132.68365817091455"/>
+        </scene>
+        <!--AnimatedBody-->
+        <scene sceneID="rSA-6m-b7v">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AnimatedBody" id="j3h-nL-6Xh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="66m-XS-nKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1366" y="51"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="crazy" width="145" height="113"/>
+        <image name="default" width="145" height="113"/>
+        <image name="excitement" width="145" height="113"/>
+        <image name="fun" width="145" height="116"/>
+        <image name="luxury" width="146" height="116"/>
+        <image name="mistery" width="145" height="116"/>
+        <image name="relaxing" width="145" height="113"/>
+        <image name="romantic" width="145" height="116"/>
+        <image name="tick" width="164" height="30"/>
+    </resources>
 </document>
