@@ -154,7 +154,7 @@ class AnimatedBodyViewController: UIViewController {
                 case 0.31..<0.36 :
                     bodyPartLabel.text = "Arms"
                 case 0.36..<0.42 :
-                    bodyPartLabel.text = "Abdominal"
+                    bodyPartLabel.text = "Abdomin"
                 case 0.42..<0.52 :
                     bodyPartLabel.text = "Waist"
                     AudioServicesPlayAlertSound(kSystemSoundID_Vibrate) //Vibration
@@ -181,19 +181,19 @@ class AnimatedBodyViewController: UIViewController {
         //Animations to make the body smaller when user clicks the confirm button and move it on the top of the screen
         UIView.animate(withDuration: 1, animations: {
             
-            self.transparentBodyOutlet.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            self.transparentBodyOutlet.transform = CGAffineTransform(scaleX: 0.73, y: 0.73)
             self.transparentBodyOutlet.frame.origin.y = CGFloat(20)
             
-            self.bodyVIew.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+            self.bodyVIew.transform = CGAffineTransform(scaleX: 0.73, y: 0.73)
             self.bodyVIew.frame.origin.y = CGFloat(20)
             
             //The label follows the red line
-            self.bodyPartLabel.frame.origin.y = CGFloat(Double(truncating: self.c) * 425 + 10)
+            self.bodyPartLabel.frame.origin.y = CGFloat(Double(truncating: self.c) * 450 + 10)
             
             self.confirmOutlet.alpha = 0.0 //The button disappears
             
             self.selectActionLabel.frame.origin.y = CGFloat(620) //"Select the action" label appears from below
-            self.waveGif.frame.origin.y = CGFloat(467) //Wave appears from below
+            self.waveGif.frame.origin.y = CGFloat(497) //Wave appears from below
             
             //Buttons appear from below
             self.kiss.frame.origin.y = CGFloat(558)
