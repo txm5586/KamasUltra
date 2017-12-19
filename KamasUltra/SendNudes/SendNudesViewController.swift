@@ -8,11 +8,10 @@
 
 /*
  TODO:
- 1. Remove - Reset Button§
+ 1. Remove - Reset Button
  2. Change Layer Gradient - Error when remove all layers from CardView!
  3. Transition between screens - action and part of the body - INIT!
  4. Autolayout
- 5. Trash - black ???
  */
 
 import UIKit
@@ -25,8 +24,8 @@ class SendNudesViewController: UIViewController {
     fileprivate var maskShapeLayer : CAShapeLayer!
     fileprivate var waveDisplayLink : CADisplayLink!
     fileprivate var offsetX : CGFloat = 0.0
-    var angularSpeed : Float = 2.0
-    var waveSpeed : Float = 1
+    var angularSpeed : Float = 2
+    var waveSpeed : Float = 1.6
     var waveColor : UIColor!
     var divisionParam: CGFloat!
     
@@ -48,6 +47,9 @@ class SendNudesViewController: UIViewController {
         configViews()
         configAction()
         configWave(frame: CGRect(x: 0, y: 20, width: self.view.frame.size.width, height: 10), backgroundColor: gradientStart, backgroundColor2: gradientEnd)
+        self.targetImageView.alpha = 0.2
+        UIView.animate(withDuration: 1, delay: 0.8, options: [.curveLinear,.repeat, .autoreverse], animations: {
+            self.targetImageView.alpha = 0.8 }, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,7 +86,7 @@ class SendNudesViewController: UIViewController {
         offsetX -= CGFloat(CGFloat(waveSpeed))
         
         let width : CGFloat = waveVW.frame.size.width
-        let height : CGFloat = waveVW.frame.size.height - 75
+        let height : CGFloat = waveVW.frame.size.height - 90
         
         let path = CGMutablePath()
         path.move(to: CGPoint(x: 0, y: height))
@@ -146,15 +148,10 @@ class SendNudesViewController: UIViewController {
         
         
         //Trash
-        let circlePath = UIBezierPath.init(arcCenter: CGPoint(x: semiCircleTrashButton.bounds.size.width / 2, y:0), radius: semiCircleTrashButton.bounds.size.height, startAngle: 0.0, endAngle: CGFloat(Double.pi), clockwise: true)
-        let circleShape = CAShapeLayer()
-        circleShape.path = circlePath.cgPath
-        semiCircleTrashButton.layer.mask = circleShape
-        semiCircleTrashButton.transform = CGAffineTransform(rotationAngle: (
-            CGFloat(Double.pi)))
-        trashImageView.transform = CGAffineTransform(rotationAngle: (
-            CGFloat(Double.pi)))
-        //self.view.bringSubview(toFront: semiCircleTrashButton)
+        semiCircleTrashButton.layer.borderColor = UIColor.black.cgColor
+        semiCircleTrashButton.layer.borderWidth = 1.5
+        semiCircleTrashButton.layer.cornerRadius = semiCircleTrashButton.frame.width/2
+        semiCircleTrashButton.clipsToBounds = true
         self.view.bringSubview(toFront: trashImageView)
    
     }
@@ -200,7 +197,6 @@ class SendNudesViewController: UIViewController {
                 UIView.animate(withDuration: 0.3, animations: {
                     
                     cardView.center = CGPoint(x: cardView.center.x, y: cardView.center.y+600)
-                    
                 })
                 
                 self.semiCircleTrashButton.alpha = 0.2
