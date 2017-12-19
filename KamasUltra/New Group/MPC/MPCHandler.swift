@@ -9,27 +9,33 @@
 import UIKit
 import MultipeerConnectivity
 
+protocol MPCHandlerDelegate {
+    func connectedDevicesChanged(manager : MPCHandler, connectedDevices: [String])
+    func sendData(manager : MPCHandler)
+}
+
 class MPCHandler: NSObject {
     private let serviceType = "kamasultraapp"//Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String
     
-    private var peerID: MCPeerID!
-    private var session: MCSession!
-    private var browser: MCNearbyServiceBrowser!
-    private var advertiser: MCNearbyServiceAdvertiser!
+    private let myPeerID: MCPeerID = MCPeerID(displayName: UIDevice.current.name)
+    
+    private let advertiser: MCNearbyServiceAdvertiser
+    private let browser: MCNearbyServiceBrowser
     
     var connectedTo: MCPeerID?
     
-    func setupBrowser() {
-        self.browser = MCNearbyServiceBrowser(peer: peerID, serviceType: serviceType)
-        self.browser.delegate = self
-        self.browser.startBrowsingForPeers()
-    }
+    var delegate : MPCHandlerDelegate?
+    
+    lazy var session : MCSession = {
+        let session = MCSession(peer: self.myPeerID, securityIdentity: nil, encryptionPreference: .required)
+        session.delegate = self
+        return session
+    }()
     
     override init() {
-        self.peerID = MCPeerID(displayName: UIDevice.current.name + String(arc4random() % 10))
-        self.advertiser = MCNearbyServiceAdvertiser(peer: peerID, discoveryInfo: nil, serviceType: serviceType)
-        self.browser = MCNearbyServiceBrowser(peer: peerID, serviceType: serviceType)
-        self.session = MCSession(peer: peerID)
+        //self.myPeerID = MCPeerID(displayName: UIDevice.current.name + String(arc4random() % 10))
+        self.advertiser = MCNearbyServiceAdvertiser(peer: self.myPeerID, discoveryInfo: nil, serviceType: serviceType)
+        self.browser = MCNearbyServiceBrowser(peer: self.myPeerID, serviceType: serviceType)
         
         super.init()
         
@@ -38,8 +44,6 @@ class MPCHandler: NSObject {
         
         self.browser.delegate = self
         self.browser.startBrowsingForPeers()
-        
-        self.session.delegate = self
     }
     
     deinit {
@@ -56,12 +60,34 @@ class MPCHandler: NSObject {
     }
     
     func invitePeer(peerID: MCPeerID) {
-        self.browser.invitePeer(self.peerID, to: self.session, withContext: nil, timeout: 10)
+        NSLog("%@", "Invited peer: \(peerID.displayName)")
+        self.browser.invitePeer(peerID, to: self.session, withContext: nil, timeout: 30)
+    }
+    
+    func sendData() {
+        let info = "teste"
+        NSLog("%@", "Send data")
+        
+        if session.connectedPeers.count > 0 {
+            do {
+                try self.session.send(info.data(using: .utf8)!, toPeers: session.connectedPeers, with: .reliable)
+            }
+            catch let error {
+                NSLog("%@", "Error for sending: \(error)")
+            }
+        }
+        
     }
 }
 
 extension MPCHandler : MCNearbyServiceBrowserDelegate {
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
+        NSLog("%@", "Found peer: \(peerID.displayName)")
+        NSLog("%@", "Invite Peer: \(peerID.displayName)")
+        self.browser.invitePeer(peerID, to: self.session, withContext: nil, timeout: 10);
+        return
+        
+        
         if !Globals.shared.peers.contains(where: { $0.peerID == peerID }) {
             Globals.shared.peers.append(Peer(peerID: peerID))
             DispatchQueue.main.async {
@@ -72,10 +98,11 @@ extension MPCHandler : MCNearbyServiceBrowserDelegate {
     }
     
     func browser(_ browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: Error) {
-        
+        NSLog("%@", "didNotStartBrowsingForPeers: \(error)")
     }
     
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
+        NSLog("%@", "Lost peer: \(peerID.displayName)")
         
         //print("Before: \(Globals.sharedManager.peers.count)")
         let peers = Globals.shared.peers.filter({$0.peerID != peerID})
@@ -96,8 +123,12 @@ extension MPCHandler : MCNearbyServiceAdvertiserDelegate {
     }
     
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
+        NSLog("%@", "Received invitation from peer: \(peerID.displayName)")
+        invitationHandler(true, self.session);
+        return
+        
         if connectedTo != nil {
-            invitationHandler(false, nil)
+            invitationHandler(false, self.session)
         } else {
             let alert = UIAlertController(title: "\(peerID.displayName) wants to connect", message: "Someone wants to play with you.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Accept", style: .default, handler: { _ in
@@ -105,7 +136,7 @@ extension MPCHandler : MCNearbyServiceAdvertiserDelegate {
             }))
             
             alert.addAction(UIAlertAction(title: "Refuse", style:.cancel, handler: { _ in
-                invitationHandler(false, nil)
+                invitationHandler(false, self.session)
             }))
             UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
         }
@@ -114,10 +145,24 @@ extension MPCHandler : MCNearbyServiceAdvertiserDelegate {
 
 extension MPCHandler : MCSessionDelegate {
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        NSLog("%@", "didReceiveData: \(data)")
         
+        self.delegate?.sendData(manager: self)
+        //self.delegate?.sendData(manager: self)
+        return
+        
+        let userInfo = ["peerID": peerID] as [String : Any]
+        
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(
+                name: Notifications.MPCReceiveData, object: nil, userInfo: userInfo)
+        }
     }
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+        NSLog("%@", "peer \(peerID) didChangeState: \(state.rawValue)")
+        return
+        
         let peers = Globals.shared.peers.filter({$0.peerID == peerID})
         let peer = peers.first!
         

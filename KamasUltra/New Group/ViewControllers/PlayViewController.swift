@@ -9,10 +9,18 @@
 import UIKit
 
 class PlayViewController: UIViewController {
-
+    private var appDelegate: AppDelegate!
+    
+    var mpcHandlerService: MPCHandler!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
+        mpcHandlerService = self.appDelegate.mpcHandler
+        mpcHandlerService.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(PlayViewController.receivedData(notification:)),
+                                               name:Notifications.MPCReceiveData, object: nil);
         // Do any additional setup after loading the view.
     }
 
@@ -20,6 +28,15 @@ class PlayViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func tappedChangeBack(_ sender: Any) {
+        self.mpcHandlerService.sendData()
+    }
+    
+    @objc func receivedData(notification: NSNotification) {
+        self.view.backgroundColor = UIColor.green
+    }
+    
     
 
     /*
@@ -32,4 +49,14 @@ class PlayViewController: UIViewController {
     }
     */
 
+}
+
+extension PlayViewController : MPCHandlerDelegate {
+    func connectedDevicesChanged(manager: MPCHandler, connectedDevices: [String]) {
+        
+    }
+    
+    func sendData(manager: MPCHandler) {
+        self.view.backgroundColor = UIColor.brown
+    }
 }
