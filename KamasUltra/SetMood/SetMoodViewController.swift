@@ -63,8 +63,8 @@ class SetMoodViewController: UIViewController {
     
     @IBAction func romanticButton(_ sender: Any) {
         Mood.gradientColor1 = UIColor(red: 204/255, green: 43/255, blue: 94/255, alpha: 1).cgColor
-        Mood.gradientColor3 = UIColor(red: 204/255, green: 43/255, blue: 94/255, alpha: 1).cgColor
-        Mood.gradientColor4 = UIColor(red: 117/255, green: 58/255, blue: 136/255, alpha: 1).cgColor
+        Mood.gradientColor4 = UIColor(red: 204/255, green: 43/255, blue: 94/255, alpha: 1).cgColor
+        Mood.gradientColor3 = UIColor(red: 117/255, green: 58/255, blue: 136/255, alpha: 1).cgColor
         Mood.gradientColor2 = UIColor(red: 117/255, green: 58/255, blue: 136/255, alpha: 1).cgColor
         Mood.moodGif = "romantic"
         TickImage.frame.origin.x = CGFloat(25)
