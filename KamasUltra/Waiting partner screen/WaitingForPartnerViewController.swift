@@ -13,6 +13,7 @@ class WaitingForPartnerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         animateDot()
+        countdownTick(self)
         countdownTimer()
     }
     
@@ -22,7 +23,6 @@ class WaitingForPartnerViewController: UIViewController {
     }
     
     func countdownTimer() {
-        countdownTick(self)
         timer = Timer.scheduledTimer(timeInterval: 7, target: self, selector: #selector(WaitingForPartnerViewController.countdownTick), userInfo: nil, repeats: true)
     }
     
@@ -30,14 +30,14 @@ class WaitingForPartnerViewController: UIViewController {
     @objc func countdownTick(_ sender: AnyObject) {
         countdown -= 1
         // fade in
-        UIView.animate(withDuration: 3.0, animations: {
+        UIView.animate(withDuration: 1.5, animations: {
             self.tipsLabel.text = self.sexualTips[self.countdown]
             self.tipsLabel.alpha = 0.6
-            
-        })  { (true) in
+        })
+        { (true) in
             // fade out
-            sleep(3)
-            UIView.animate(withDuration: 2.0, animations: {
+            sleep(4)
+            UIView.animate(withDuration: 1.5, animations: {
                 self.tipsLabel.alpha = 0.0
             })
         }
