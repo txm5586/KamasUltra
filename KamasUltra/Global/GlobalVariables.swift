@@ -18,6 +18,9 @@ class Globals {
         case declined = "Declined"
     }
     
+    var selectedAction : Action!
+    var selectedBodyPart : BodyPart!
+    
     // Here is how you would get to it without there being a global collision of variables.
     // , or in other words, it is a globally accessable parameter that is specific to the
     // class.
