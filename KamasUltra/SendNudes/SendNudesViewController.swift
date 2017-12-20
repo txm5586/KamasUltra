@@ -9,7 +9,6 @@
 /*
  TODO:
  1. Remove - Reset Button
- 2. Change Layer Gradient - Error when remove all layers from CardView!
  3. Transition between screens - action and part of the body - INIT!
  4. Autolayout
  */
@@ -39,22 +38,7 @@ class SendNudesViewController: UIViewController {
         super.viewDidLoad()
         configViews()
         configAction()
-        
-        //wave gif - Rotated
-        waveGif.transform = CGAffineTransform(rotationAngle: (
-            CGFloat(Double.pi)))
-        //Assing wave gif
-        waveGif.loadGif(name: Mood.moodGif)
-        waveGif.backgroundColor = UIColor.white
-        waveGif.backgroundColor = UIColor.white
-        self.view.bringSubview(toFront: targetImageView)
-
-        
-        
-       // configWave(frame: CGRect(x: 0, y: 50, width: self.view.frame.size.width, height: 10), backgroundColor: gradientStart, backgroundColor2: gradientEnd)
-        self.targetImageView.alpha = 0.2
-        UIView.animate(withDuration: 1, delay: 0.8, options: [.curveLinear,.repeat, .autoreverse], animations: {
-            self.targetImageView.alpha = 0.8 }, completion: nil)
+        configWave()
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,72 +46,31 @@ class SendNudesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    
-   /*  func configWave(frame: CGRect, backgroundColor: UIColor, backgroundColor2: UIColor){
-       waveColor = backgroundColor
-        
-        waveVW.frame = frame
-        waveVW.backgroundColor = backgroundColor
-        self.view.bringSubview(toFront: targetImageView)
-     
-        //TOP - Rotate
-        waveVW.transform = CGAffineTransform(rotationAngle: (
+    func configWave(){
+        //wave gif - Rotated
+        waveGif.transform = CGAffineTransform(rotationAngle: (
             CGFloat(Double.pi)))
         
-        //Wave 1
-        waveShapeLayer = CAShapeLayer()
-        waveShapeLayer.fillColor = backgroundColor2.cgColor
-        waveVW.layer.addSublayer(waveShapeLayer)
+        //Assing wave gif
+        waveGif.loadGif(name: Mood.moodGif)
+        waveGif.backgroundColor = UIColor.white
+        waveGif.backgroundColor = UIColor.white
         
-        //Wave 2
-        maskShapeLayer = CAShapeLayer()
-        maskShapeLayer.fillColor = backgroundColor.cgColor
-        waveVW.layer.addSublayer(maskShapeLayer)
-        
-        waveDisplayLink = CADisplayLink(target: self, selector: #selector(keyFrameWave))
-        waveDisplayLink.add(to: .main, forMode: .commonModes)
+        //Target
+        self.view.bringSubview(toFront: targetImageView)
+        self.targetImageView.alpha = 0.2
+        UIView.animate(withDuration: 1, delay: 0.8, options: [.curveLinear,.repeat, .autoreverse], animations: {
+            self.targetImageView.alpha = 0.8 }, completion: nil)
     }
-
-    @objc func keyFrameWave() {
-        offsetX -= CGFloat(CGFloat(waveSpeed))
-        
-        let width : CGFloat = waveVW.frame.size.width
-        let height : CGFloat = waveVW.frame.size.height - 90
-        
-        let path = CGMutablePath()
-        path.move(to: CGPoint(x: 0, y: height))
-        
-        let path2 = CGMutablePath()
-        path2.move(to: CGPoint(x: 0, y: height))
-        var maskY : CGFloat = 0
-        
-        var y : CGFloat = 0
-        for x in stride(from: 0, through: width, by: 1) {
-            
-            y = height * sin(0.01 * (CGFloat(angularSpeed) * CGFloat(x) + offsetX))
-            path.addLine(to: CGPoint(x: x, y: y))
-            
-            maskY = -y
-            path2.addLine(to: CGPoint(x: x, y: maskY))
-        }
-        
-        
-        path.addLine(to: CGPoint(x: width, y: height))
-        path.addLine(to: CGPoint(x: 0, y: height))
-        path.closeSubpath()
-        waveShapeLayer.path = path
-        
-        path2.addLine(to: CGPoint(x: width, y: height))
-        path2.addLine(to: CGPoint(x: 0, y: height))
-        path2.closeSubpath()
-        maskShapeLayer.path = path2
-    }*/
-    
     
     func configAction(){
-        partBodyLabel.text = "NECK"  // TODO: Array partOfTheBody!
-        typeActionImageView.image = UIImage(named: "kiss") // TODO: Array actions!
+        
+        Globals.shared.selectedAction = Action.kiss
+        Globals.shared.selectedBodyPart = BodyPart.Chest
+        
+        partBodyLabel.text = Globals.shared.selectedBodyPart.rawValue
+        //let action = Globals.shared.selectedAction
+        typeActionImageView.image = UIImage(named: "\(Globals.shared.selectedAction!)")
         typeActionImageView.image = typeActionImageView.image!.withRenderingMode (UIImageRenderingMode.alwaysTemplate)
         typeActionImageView.tintColor = UIColor.white
     }
@@ -214,13 +157,4 @@ class SendNudesViewController: UIViewController {
             }
         }
     }
-    
-    // TODO: Remove this button and function!
-    @IBAction func resetButtonClicked() {
-        cardView.center = self.view.center
-        typeFire.image = UIImage(named:"fosforo1")
-        cardView.transform = .identity
-    }
-    
-
 }
