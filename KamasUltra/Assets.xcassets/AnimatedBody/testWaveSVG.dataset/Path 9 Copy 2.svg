@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="374px" height="207px" viewBox="0 0 374 207" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Path 9 Copy 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="68.4784971%" x2="84.5985526%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#3F5EFB" offset="0%"></stop>
+            <stop stop-color="#FC466B" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="SelectAction" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1.000000, -460.000000)" opacity="0.872905344">
+        <path d="M1,559.216414 C32.9907445,457.462622 68.1961078,433.975876 106.61609,488.756176 C145.036072,543.536477 189.593589,551.463509 240.288642,512.537272 C277.482675,467.139988 311.835209,465.403854 343.346244,507.328869 C374.857279,549.253883 408.408531,553.723114 444,520.736561 L444,667.597746 L1,667.597746 L1,559.216414 Z" id="Path-9-Copy-2" fill="url(#linearGradient-1)" style="mix-blend-mode: multiply;"></path>
+    </g>
+</svg>
