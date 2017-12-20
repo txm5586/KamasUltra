@@ -15,6 +15,7 @@ struct Mood {
     static var gradientColor2 = UIColor(red: 248/255, green: 26/255, blue: 53/255, alpha: 1).cgColor
     static var gradientColor3 = UIColor(red: 248/255, green: 26/255, blue: 53/255, alpha: 1).cgColor
     static var gradientColor4 = UIColor(red: 25/255, green: 42/255, blue: 240/255, alpha: 1).cgColor
+    static var tickPosition = (x: 25, y: 79)
 }
 
 class SetMoodViewController: UIViewController {
@@ -29,6 +30,8 @@ class SetMoodViewController: UIViewController {
         Mood.moodGif = "default"
         TickImage.frame.origin.x = CGFloat(25)
         TickImage.frame.origin.y = CGFloat(79)
+        Mood.tickPosition.x = 25
+        Mood.tickPosition.y = 79
     }
     
     @IBAction func luxury(_ sender: Any) {
@@ -39,6 +42,8 @@ class SetMoodViewController: UIViewController {
         Mood.moodGif = "luxury"
         TickImage.frame.origin.x = CGFloat(211)
         TickImage.frame.origin.y = CGFloat(79)
+        Mood.tickPosition.x = 211
+        Mood.tickPosition.y = 79
     }
     
     @IBAction func misteryButton(_ sender: Any) {
@@ -49,6 +54,8 @@ class SetMoodViewController: UIViewController {
         Mood.moodGif = "mistery"
         TickImage.frame.origin.x = CGFloat(25)
         TickImage.frame.origin.y = CGFloat(224)
+        Mood.tickPosition.x = 25
+        Mood.tickPosition.y = 224
     }
     
     @IBAction func relaxingButton(_ sender: Any) {
@@ -59,6 +66,8 @@ class SetMoodViewController: UIViewController {
         Mood.moodGif = "relaxing"
         TickImage.frame.origin.x = CGFloat(211)
         TickImage.frame.origin.y = CGFloat(224)
+        Mood.tickPosition.x = 211
+        Mood.tickPosition.y = 224
     }
     
     @IBAction func romanticButton(_ sender: Any) {
@@ -69,6 +78,8 @@ class SetMoodViewController: UIViewController {
         Mood.moodGif = "romantic"
         TickImage.frame.origin.x = CGFloat(25)
         TickImage.frame.origin.y = CGFloat(378)
+        Mood.tickPosition.x = 25
+        Mood.tickPosition.y = 378
     }
     
     @IBAction func funButton(_ sender: Any) {
@@ -79,6 +90,8 @@ class SetMoodViewController: UIViewController {
         Mood.moodGif = "fun"
         TickImage.frame.origin.x = CGFloat(211)
         TickImage.frame.origin.y = CGFloat(378)
+        Mood.tickPosition.x = 211
+        Mood.tickPosition.y = 378
     }
     
     @IBAction func excitementButton(_ sender: Any) {
@@ -89,6 +102,8 @@ class SetMoodViewController: UIViewController {
         Mood.moodGif = "excitement"
         TickImage.frame.origin.x = CGFloat(25)
         TickImage.frame.origin.y = CGFloat(526)
+        Mood.tickPosition.x = 25
+        Mood.tickPosition.y = 526
     }
     
     @IBAction func crazyButton(_ sender: Any) {
@@ -99,6 +114,8 @@ class SetMoodViewController: UIViewController {
         Mood.moodGif = "crazy"
         TickImage.frame.origin.x = CGFloat(211)
         TickImage.frame.origin.y = CGFloat(526)
+        Mood.tickPosition.x = 211
+        Mood.tickPosition.y = 526
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -111,6 +128,11 @@ class SetMoodViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        TickImage.frame.origin.x = CGFloat(Mood.tickPosition.x)
+        TickImage.frame.origin.y = CGFloat(Mood.tickPosition.y)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
