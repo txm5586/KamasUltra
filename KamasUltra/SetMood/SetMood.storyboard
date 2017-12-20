@@ -86,6 +86,11 @@
                                             <action selector="misteryButton:" destination="rdF-sB-tc9" eventType="touchUpInside" id="50h-kB-pTy"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="uch-0V-nhd">
+                                        <rect key="frame" x="25" y="79" width="145" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
                                     <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NVd-gT-jme">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -99,11 +104,6 @@
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
-                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tick" translatesAutoresizingMaskIntoConstraints="NO" id="PU4-3F-jvX">
-                                        <rect key="frame" x="25" y="79" width="145" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.50381212349397586" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -111,7 +111,7 @@
                         <viewLayoutGuide key="safeArea" id="b9v-f7-2aT"/>
                     </view>
                     <connections>
-                        <outlet property="TickImage" destination="PU4-3F-jvX" id="mDf-nl-aiV"/>
+                        <outlet property="TickImage" destination="uch-0V-nhd" id="Zgj-C2-lsT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="syN-JZ-KOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -124,7 +124,7 @@
                 <viewControllerPlaceholder storyboardName="AnimatedBody" id="j3h-nL-6Xh" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="66m-XS-nKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1366" y="51"/>
+            <point key="canvasLocation" x="1442" y="132"/>
         </scene>
     </scenes>
     <resources>
