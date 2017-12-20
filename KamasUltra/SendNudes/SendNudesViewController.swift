@@ -19,21 +19,14 @@ import AudioToolbox
 
 class SendNudesViewController: UIViewController {
     
-    
-    fileprivate var waveShapeLayer : CAShapeLayer!
-    fileprivate var maskShapeLayer : CAShapeLayer!
-    fileprivate var waveDisplayLink : CADisplayLink!
-    fileprivate var offsetX : CGFloat = 0.0
-    var angularSpeed : Float = 2
-    var waveSpeed : Float = 1.6
-    var waveColor : UIColor!
     var divisionParam: CGFloat!
     
     // GRADIENT COLORS
     var gradientStart = UIColor(red: 63/255.0, green: 94/255.0, blue: 251/255.0, alpha: 1)
     var gradientEnd = UIColor(red: 252/255.0, green: 70/255.0, blue: 107/255.0, alpha: 1)
     
-    @IBOutlet weak var waveVW: UIView!
+   // @IBOutlet weak var waveVW: UIView!
+     @IBOutlet weak var waveGif: UIImageView!
     @IBOutlet weak var semiCircleTrashButton: UIView!
     @IBOutlet weak var targetImageView: UIImageView!
     @IBOutlet weak var trashImageView: UIImageView!
@@ -46,7 +39,19 @@ class SendNudesViewController: UIViewController {
         super.viewDidLoad()
         configViews()
         configAction()
-        configWave(frame: CGRect(x: 0, y: 20, width: self.view.frame.size.width, height: 10), backgroundColor: gradientStart, backgroundColor2: gradientEnd)
+        
+        //wave gif - Rotated
+        waveGif.transform = CGAffineTransform(rotationAngle: (
+            CGFloat(Double.pi)))
+        //Assing wave gif
+        waveGif.loadGif(name: Mood.moodGif)
+        waveGif.backgroundColor = UIColor.white
+        waveGif.backgroundColor = UIColor.white
+        self.view.bringSubview(toFront: targetImageView)
+
+        
+        
+       // configWave(frame: CGRect(x: 0, y: 50, width: self.view.frame.size.width, height: 10), backgroundColor: gradientStart, backgroundColor2: gradientEnd)
         self.targetImageView.alpha = 0.2
         UIView.animate(withDuration: 1, delay: 0.8, options: [.curveLinear,.repeat, .autoreverse], animations: {
             self.targetImageView.alpha = 0.8 }, completion: nil)
@@ -57,8 +62,10 @@ class SendNudesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func configWave(frame: CGRect, backgroundColor: UIColor, backgroundColor2: UIColor){
-        waveColor = backgroundColor
+
+    
+   /*  func configWave(frame: CGRect, backgroundColor: UIColor, backgroundColor2: UIColor){
+       waveColor = backgroundColor
         
         waveVW.frame = frame
         waveVW.backgroundColor = backgroundColor
@@ -115,7 +122,7 @@ class SendNudesViewController: UIViewController {
         path2.addLine(to: CGPoint(x: 0, y: height))
         path2.closeSubpath()
         maskShapeLayer.path = path2
-    }
+    }*/
     
     
     func configAction(){
