@@ -29,3 +29,28 @@ class Globals {
     }
 }
 
+// MARK: Constatants
+enum Action : Int {
+    case kiss = 0
+    case lick = 1
+    case suck = 2
+    case touch = 3
+    case random = 4
+}
+
+enum BodyPart : String {
+    case Head
+    case Ears
+    case Mouth
+    case Neck
+    case Shoulders
+    case Chest
+    case Arms
+    case Abdomin
+    case Waist
+    case Hands
+    case Legs
+    case Knees
+    case Feet
+}
+
